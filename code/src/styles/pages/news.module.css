@@ -1,0 +1,143 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 0 48px;
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  border: var(--isc-border-w) solid var(--isc-c-border);
+}
+
+.featuredPhoto {
+  min-height: 460px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.featuredBody {
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--isc-green);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 20px;
+}
+
+.metaDate {
+  font-size: var(--isc-fs-caption);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+.card {
+  border: var(--isc-border-w) solid var(--isc-c-border);
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cardPhoto {
+  background-size: cover;
+  background-position: 50% 50%;
+  border-bottom: var(--isc-border-w) solid var(--isc-c-border);
+}
+
+.cardBody {
+  padding: 26px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardLink {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.briefs {
+  background: var(--isc-green-900);
+  padding: 80px 0 96px;
+}
+
+.briefsHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 0 12px;
+}
+
+.brief {
+  display: grid;
+  grid-template-columns: 130px 1fr 150px;
+  gap: 32px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-top: var(--isc-border-w) solid var(--isc-c-border);
+  color: inherit;
+}
+
+.brief:hover .briefTitle {
+  color: var(--isc-gold);
+}
+
+.briefDate {
+  font-size: var(--isc-fs-caption);
+  color: var(--isc-gold);
+}
+
+.briefTitle {
+  font-family: var(--isc-font-display);
+  font-size: 19px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.briefCat {
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
+}
+
+@media (max-width: 1080px) {
+  .featured {
+    grid-template-columns: 1fr;
+  }
+  .featuredPhoto {
+    min-height: 300px;
+  }
+  .featuredBody {
+    padding: 40px var(--isc-page-pad);
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid > * {
+    grid-column: auto !important;
+  }
+  .brief {
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+  .briefCat {
+    display: none;
+  }
+}

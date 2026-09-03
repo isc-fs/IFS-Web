@@ -69,7 +69,9 @@ Enforced by GitHub Actions and branch protection, not by convention alone:
 - The first commit message auto-fills the issue description. PRs target `dev` and should say `Closes #<issue-number>`.
 - `ROADMAP.md` is **generated** from `.github/roadmap.yaml` by `.github/scripts/render_roadmap.py` on every push to `dev`. Edit the YAML, never `ROADMAP.md`.
 
-`main` and `dev` are both protected: linear history, no force-push, no deletion, PR required with 1 approval, and `build` + `branch-and-target` must pass. `dev` grants the GitHub Actions app a bypass so `roadmap.yml`'s auto-commit of `ROADMAP.md` can still push; without that bypass every merge into `dev` would end in a red X.
+Both `main` and `dev` are protected by repository rulesets: no force-push, no deletion, a PR with 1 approval, and `build` + `branch-and-target` must pass. `main` additionally requires the branch to be up to date and review threads resolved. Repository admins can bypass both, so a lead can always recover the repo. Merge commits are deliberately still allowed — no linear-history rule — because the ROADMAP diagram models history as merges.
+
+Consequence worth knowing: **nothing can push directly to `dev` any more, including workflows.** The GitHub Actions app cannot be granted a ruleset bypass at repository level (the API rejects it — it must belong to the org). `roadmap.yml` therefore no longer commits `ROADMAP.md` straight to `dev`; it force-updates a `chore/roadmap` branch and opens a PR. `pr-hygiene.yml` exempts that branch and Dependabot's, because it is a required check and would otherwise make those PRs permanently unmergeable. If you add a workflow that writes to the repo, it needs the same treatment.
 
 Still template placeholders: `.github/roadmap.yaml` holds a TODO phase, so `ROADMAP.md` renders a TODO roadmap until it is filled in.
 

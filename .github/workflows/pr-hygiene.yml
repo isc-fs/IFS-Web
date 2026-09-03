@@ -4,6 +4,11 @@ name: PR hygiene
 #   * work happens on feat/<n> or fix/<n>, cut from dev
 #   * those PRs target dev, never main
 #   * only dev may open a PR into main (validated releases)
+#
+# Automation branches are exempt: Dependabot names its own branches, and the
+# Render ROADMAP workflow opens its PR from chore/roadmap because dev is
+# protected. This job is a required status check, so anything that legitimately
+# opens a PR has to be allowed through here or its PR can never merge.
 
 on:
   pull_request:
@@ -25,12 +30,23 @@ jobs:
           HEAD_REF: ${{ github.event.pull_request.head.ref }}
           BASE_REF: ${{ github.event.pull_request.base.ref }}
           IS_FORK: ${{ github.event.pull_request.head.repo.fork }}
+          ACTOR: ${{ github.event.pull_request.user.login }}
         with:
           script: |
             const head = process.env.HEAD_REF;
             const base = process.env.BASE_REF;
             const isFork = process.env.IS_FORK === 'true';
+            const actor = process.env.ACTOR || '';
             const problems = [];
+
+            const AUTOMATION_BRANCHES = [/^dependabot\//, /^chore\/roadmap$/];
+            const AUTOMATION_ACTORS = ['dependabot[bot]', 'github-actions[bot]'];
+
+            if (AUTOMATION_BRANCHES.some((re) => re.test(head)) ||
+                AUTOMATION_ACTORS.includes(actor)) {
+              core.info(`Automation branch (${head} by ${actor}) — exempt.`);
+              return;
+            }
 
             if (base === 'main') {
               // main only ever receives validated releases from dev.
