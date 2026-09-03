@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import PageHero from '../../components/PageHero.astro';
 import SectionHead from '../../components/SectionHead.astro';
 import styles from '../../styles/pages/sponsors.module.css';
+import sponsorLogos from '../../data/sponsors.json';
 import { type Lang, useTranslations, languages } from '../../i18n';
 
 export function getStaticPaths() {
@@ -11,6 +12,9 @@ export function getStaticPaths() {
 
 const lang = Astro.params.lang as Lang;
 const t = useTranslations(lang);
+
+/** Brand name -> logo filename; brands without one fall back to type. */
+const logoFiles = sponsorLogos as Record<string, string>;
 ---
 
 <Base
@@ -95,7 +99,11 @@ const t = useTranslations(lang);
           </div>
           <div class={styles.logoRow}>
             {tier.logos.map((logo) => (
-              <div class={styles.logoBox}><span>{logo}</span></div>
+              <div class={styles.logoBox}>
+                {logoFiles[logo]
+                  ? <img src={`/assets/sponsors/${logoFiles[logo]}`} alt={logo} loading="lazy" />
+                  : <span>{logo}</span>}
+              </div>
             ))}
           </div>
         </div>

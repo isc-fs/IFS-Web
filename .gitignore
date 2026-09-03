@@ -33,3 +33,9 @@ yarn-error.log*
 .vscode/
 .idea/
 *.swp
+
+# Sponsor master artwork, as delivered by each sponsor (multiple variants,
+# .eps and .pdf among them). The chosen web variant of each logo is committed
+# under code/public/assets/sponsors/; this folder is the unprocessed source
+# and stays out of the repo. Keep it somewhere backed up.
+2. SPONSORS/
