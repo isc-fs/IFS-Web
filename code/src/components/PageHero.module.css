@@ -1,0 +1,39 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+}
+
+.inner {
+  width: 100%;
+  padding-top: 132px;
+  padding-bottom: 76px;
+}
+
+.title {
+  max-width: 20ch;
+  margin: 0 0 var(--isc-space-5);
+}
+
+.lead {
+  max-width: 54ch;
+  margin: 0;
+  font-size: var(--isc-fs-body-l);
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: var(--isc-space-6);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding-top: 88px;
+    padding-bottom: 56px;
+  }
+}

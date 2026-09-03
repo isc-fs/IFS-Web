@@ -1,60 +1,35 @@
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# This repository holds a static website, not firmware.
+#
+# It was created from the ISC firmware repo template, whose .gitignore
+# carried the usual C/embedded patterns. Those were removed: the kernel
+# module rule `*.mod*` matched every `*.module.css` file in the Astro
+# source tree, so eight stylesheets were silently excluded from the
+# initial import and the build failed in CI with "could not resolve
+# ../../styles/pages/competition.module.css". Other template patterns
+# (`*.d`, `*.map`, `*.app`, `*.out`) are the same trap waiting to happen.
+# Do not reintroduce them here.
 
 # Node / web tooling (the site lives in code/)
 node_modules/
 dist/
 .astro/
+.vercel/
+.netlify/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
 
 # macOS
 .DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
