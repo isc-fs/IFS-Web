@@ -5,7 +5,8 @@
     "competition": "Competition",
     "sponsors": "Sponsors",
     "news": "Newsroom",
-    "cta": "Sponsor us"
+    "cta": "Sponsor us",
+    "menu": "Menu"
   },
   "home": {
     "heroEyebrow": "Universidad Pontificia Comillas ICAI · Madrid",
@@ -526,8 +527,7 @@
     "heroEyebrow": "Newsroom",
     "heroTitle": "What happens in the box.",
     "heroLead": "Season, competitions, technical progress and team life. Everything we publish, newest first.",
-    "filters": [
-      "All",
+    "categories": [
       "Competition",
       "Team",
       "Technical",
@@ -535,7 +535,8 @@
     ],
     "readMore": "Read more",
     "archive": "See archive",
-    "briefsTitle": "In brief"
+    "briefsTitle": "In brief",
+    "empty": "Nothing published in this section yet."
   },
   "footer": {
     "tagline": "ISC Formula Student Racing Team. Student motorsport team of Universidad Pontificia Comillas ICAI, Madrid.",

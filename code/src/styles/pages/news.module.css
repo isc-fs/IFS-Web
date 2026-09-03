@@ -1,8 +1,26 @@
-.filters {
+.categories {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 0 0 48px;
+  gap: var(--isc-space-3) var(--isc-space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0 0 var(--isc-space-7);
+  font-family: var(--isc-font-mono);
+  font-size: var(--isc-fs-caption);
+  letter-spacing: var(--isc-ls-mono);
+  text-transform: uppercase;
+  color: var(--isc-c-text-mut);
+}
+
+/* Reads as an index of what the newsroom covers, not as a row of buttons. */
+.categories li + li::before {
+  content: '';
+  display: inline-block;
+  width: var(--isc-space-3);
+  height: var(--isc-rule-w);
+  margin-right: var(--isc-space-5);
+  vertical-align: middle;
+  background: var(--isc-c-accent);
 }
 
 .featured {
@@ -12,6 +30,7 @@
 }
 
 .featuredPhoto {
+  background-image: var(--photo);
   min-height: 460px;
   background-size: cover;
   background-position: 50% 50%;
@@ -44,6 +63,7 @@
 }
 
 .card {
+  grid-column: span var(--span, 2);
   border: var(--isc-border-w) solid var(--isc-c-border);
   display: flex;
   flex-direction: column;
@@ -51,6 +71,8 @@
 }
 
 .cardPhoto {
+  height: var(--photo-h, 200px);
+  background-image: var(--photo);
   background-size: cover;
   background-position: 50% 50%;
   border-bottom: var(--isc-border-w) solid var(--isc-c-border);
@@ -122,6 +144,7 @@
     grid-template-columns: 1fr;
   }
   .featuredPhoto {
+  background-image: var(--photo);
     min-height: 300px;
   }
   .featuredBody {
@@ -140,4 +163,60 @@
   .briefCat {
     display: none;
   }
+}
+
+/* ── sm ──────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .brief {
+    grid-template-columns: 84px 1fr;
+    gap: var(--isc-space-3);
+  }
+  .featuredBody {
+    padding: var(--isc-space-6) var(--isc-page-pad);
+  }
+}
+
+.newsHero {
+  padding: var(--isc-space-9) 0 0;
+}
+
+.heroLead {
+  max-width: 56ch;
+  margin-bottom: var(--isc-space-7);
+}
+
+.featuredSection {
+  padding: 0 0 var(--isc-space-7);
+}
+
+.gridSection {
+  padding: var(--isc-space-6) 0 var(--isc-space-9);
+}
+
+.readMore {
+  align-self: flex-start;
+  font-size: var(--isc-fs-caption);
+}
+
+/* The archive link sits in a heading row that already carries a rule. */
+.archiveLink {
+  border: 0;
+}
+
+/* Empty state. Borrows the sponsor wall's specimen box: a bordered block on
+   a barely-lifted ground, so an empty section reads as deliberate rather
+   than as a section that failed to load. */
+.empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: var(--isc-space-7) var(--isc-space-5);
+  border: var(--isc-border-w) solid var(--isc-c-border);
+  background: rgba(255, 255, 255, 0.04);
+  text-align: center;
+  font-family: var(--isc-font-mono);
+  font-size: var(--isc-fs-body-s);
+  color: var(--isc-c-text-mut);
 }

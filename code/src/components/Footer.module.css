@@ -80,3 +80,19 @@
     gap: 40px;
   }
 }
+
+/* ── sm ──────────────────────────────────────────────────────────────────
+ * Footer links were 20–22px tall — the same touch-target failure the header
+ * had, in the one place a visitor reaches for the contact details. */
+@media (max-width: 640px) {
+  .links a,
+  .legalLinks a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--isc-tap-min);
+  }
+
+  .legalLinks {
+    gap: var(--isc-space-4) var(--isc-space-5);
+  }
+}

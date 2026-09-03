@@ -335,3 +335,89 @@ a:hover {
   }
   .section { padding: var(--isc-space-8) 0; }
 }
+
+/* ── sm: single column, and a display scale a phone can actually hold ────── */
+@media (max-width: 640px) {
+  :root {
+    --isc-fs-display-xl: 36px;
+    --isc-fs-display-l: 30px;
+    --isc-fs-display-m: 26px;
+    --isc-page-pad: var(--isc-space-4);
+  }
+
+  .section { padding: var(--isc-space-7) 0; }
+
+  /* A headline that fills the viewport stops reading as a headline. */
+  .display-xl,
+  .display-l,
+  .display-m { letter-spacing: -0.015em; }
+
+  /* Touch targets. The compact button is the site's primary CTA in the
+     header, so it is the one that most needs to clear 44px. */
+  .btn-sm {
+    min-height: var(--isc-tap-min);
+    padding: var(--isc-space-3) var(--isc-space-4);
+  }
+  .btn {
+    min-height: var(--isc-tap-min);
+  }
+}
+
+/* ── Utilities ───────────────────────────────────────────────────────────
+ * A deliberately tiny layer. 59 inline style attributes across seven
+ * templates were patching vertical rhythm and text colour by hand, with
+ * off-scale values (14, 18, 20, 22, 26, 28, 44, 104px) against a 4/8 scale
+ * and hardcoded rgba whites that break the ground contract. These cover the
+ * recurring cases so a template never needs to reach for `style=` again. */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--isc-space-3);
+  margin-top: var(--isc-space-6);
+}
+
+.flush { margin: 0; }
+.mb-3 { margin-bottom: var(--isc-space-3); }
+.mb-4 { margin-bottom: var(--isc-space-4); }
+.mb-5 { margin-bottom: var(--isc-space-5); }
+.mb-6 { margin-bottom: var(--isc-space-6); }
+.mb-7 { margin-bottom: var(--isc-space-7); }
+.self-start { align-self: flex-start; }
+
+/* ── Motion ──────────────────────────────────────────────────────────────
+ * The token set defined three durations and an easing curve, and nothing
+ * referenced two of them. These are the interactions that were silent:
+ * a link that does not acknowledge the cursor reads as a dead page. */
+
+a,
+.link-rule,
+.badge {
+  transition: color var(--isc-dur-fast) var(--isc-ease),
+              border-color var(--isc-dur-fast) var(--isc-ease),
+              background var(--isc-dur-fast) var(--isc-ease);
+}
+
+.btn {
+  transition: background var(--isc-dur-fast) var(--isc-ease),
+              color var(--isc-dur-fast) var(--isc-ease),
+              border-color var(--isc-dur-fast) var(--isc-ease),
+              transform var(--isc-dur-fast) var(--isc-ease);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Honour the OS setting. This ships in the same change as the transitions
+ * above, never after: motion added without a guard is the bug. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

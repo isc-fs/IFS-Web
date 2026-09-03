@@ -98,6 +98,27 @@ src/
 | `.field` / `.label` / `.input` / `.help` | forms |
 | `.mono` | IBM Plex Mono for data: dates, codes, point totals |
 | `.wrap` / `.section` / `.prose` | layout containers |
+| `.actions` | a row of buttons — wraps, gap and top margin already set |
+| `.flush` / `.mb-3`–`.mb-7` / `.self-start` | the small utility layer (see below) |
+
+**Breakpoints** — two, and only two. Custom properties cannot be used inside a
+media query, so the values are written out and documented in `tokens.css`:
+
+| | | |
+|---|---|---|
+| `sm` | 640px | single column, disclosure nav, mobile type step, 44px touch targets |
+| `lg` | 1080px | multi-column grids collapse to two |
+
+`SiteHeader` and `PageHero` additionally carry a 900px query for the header row
+and hero padding.
+
+**Utilities** — a deliberately tiny layer (`.flush`, `.mb-3`–`.mb-7`,
+`.self-start`, `.actions`). Templates carried 59 inline `style=` attributes with
+off-scale spacing and hardcoded `rgba` whites; these cover the recurring cases
+so no template needs `style=` again. Anything page-specific still belongs in
+that page's `*.module.css`. The one legitimate use of inline `style` is passing
+a *dynamic value* as a custom property — a hero image URL, a card's column
+span — never a finished declaration.
 
 Grounds: put `.isc-dark` (racing green / ink, the default) or `.isc-light` (paper / cream) on any container. Components read only the contextual `--isc-c-*` variables, so grounds nest correctly at any depth.
 
@@ -198,6 +219,9 @@ Spanish is the default. Route slugs are identical in both languages, only labels
       in. Keyshot sent only `.eps`, which browsers cannot render.
 - [ ] Replace the member portrait placeholders on the team page with the season photography.
 - [ ] Add the extended-Latin font files if any copy needs characters outside the Latin subset.
+- [ ] Decide whether the newsroom categories should become real filters. They
+      are a static legend today; making them interactive needs either client JS
+      (the site ships none) or `/news/[category]` routes.
 - [ ] Set the production domain in `astro.config.mjs` (`site`).
 - [ ] **Optimise the photography.** `public/assets` is ~90 MB of camera-original
       JPEGs — ten files at 6–10 MB each, shipped to visitors as-is. Resizing to

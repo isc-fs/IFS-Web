@@ -4,7 +4,7 @@ import '../styles/fonts.css';
 import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import Footer from '../components/Footer.astro';
-import { type Lang, useTranslations, otherLang, path } from '../i18n';
+import { type Lang, otherLang, path } from '../i18n';
 
 interface Props {
   lang: Lang;
@@ -16,7 +16,6 @@ interface Props {
 }
 
 const { lang, current, title, description, self = '/' } = Astro.props;
-const t = useTranslations(lang);
 const alt = otherLang(lang);
 ---
 
@@ -26,6 +25,11 @@ const alt = otherLang(lang);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    {/* Cropped from the team's own lockup. /favicon.ico previously fell
+        through to the [lang] route and logged a router warning per request. */}
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#064229" />
     {description && <meta name="description" content={description} />}
     <link rel="alternate" hreflang={alt} href={path(alt, self)} />
     <link rel="alternate" hreflang={lang} href={path(lang, self)} />

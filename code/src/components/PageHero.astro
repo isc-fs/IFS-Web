@@ -28,13 +28,21 @@ const {
   rule = false
 } = Astro.props;
 
-const overlay = `linear-gradient(${angle}deg, rgba(4,49,30,.95) 0%, rgba(7,19,13,.74) 48%, rgba(7,19,13,.22) 100%)`;
+/*
+  Passed as custom properties rather than a finished background declaration.
+  The scrim is directional, and on a narrow viewport the copy spans the full
+  width and runs past the opaque end into the thin end — so the final stop has
+  to be reachable from a media query, which an inline background is not.
+*/
+const vars = [
+  `--hero-min-h:${height}`,
+  `--hero-angle:${angle}deg`,
+  `--hero-focus:${focus}`,
+  `--hero-image:url('${image}')`
+].join(';');
 ---
 
-<section
-  class={styles.hero}
-  style={`min-height:${height};background-image:${overlay},url('${image}');background-position:${focus}`}
->
+<section class={styles.hero} style={vars}>
   <div class={`wrap ${styles.inner}`}>
     <p class="eyebrow">{eyebrow}</p>
     <h1 class={`heading ${size === 'xl' ? 'display-xl' : 'display-l'} ${styles.title}`}>{title}</h1>

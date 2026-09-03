@@ -38,25 +38,31 @@ const briefs = sorted.filter((p) => p.data.kind === 'brief');
   title={`${t.nav.news} · ISC Formula Student`}
   description={t.news.heroLead}
 >
-  <section style="padding:104px 0 0">
+  <section class={styles.newsHero}>
     <div class="wrap">
       <p class="eyebrow">{t.news.heroEyebrow}</p>
-      <h1 class="heading display-l" style="margin-bottom:20px">{t.news.heroTitle}</h1>
+      <h1 class="heading display-l mb-5">{t.news.heroTitle}</h1>
       <hr class="rule rule-lg" />
-      <p class="lead" style="max-width:56ch;margin-bottom:40px">{t.news.heroLead}</p>
-      <div class={styles.filters}>
-        {t.news.filters.map((f) => <span class="badge badge-outline badge-pill">{f}</span>)}
-      </div>
+      <p class={`lead ${styles.heroLead}`}>{t.news.heroLead}</p>
+      {/*
+        These were pill-shaped outlined badges sitting exactly where filters
+        belong, on a site that ships no JavaScript — they looked like controls
+        and did nothing. Rendered as a category legend instead: same
+        information, no false affordance.
+      */}
+      <ul class={styles.categories}>
+        {t.news.categories.map((c) => <li>{c}</li>)}
+      </ul>
     </div>
   </section>
 
   {featured && (
-    <section style="padding:0 0 40px">
+    <section class={styles.featuredSection}>
       <div class="wrap">
         <div class={styles.featured}>
           <div
             class={styles.featuredPhoto}
-            style={`background-image:url('${featured.data.image ?? '/assets/car-cornering.jpg'}')`}
+            style={`--photo:url('${featured.data.image ?? '/assets/car-cornering.jpg'}')`}
             role="img"
             aria-label={featured.data.title}
           />
@@ -65,33 +71,34 @@ const briefs = sorted.filter((p) => p.data.kind === 'brief');
               <span class="badge badge-gold">{featured.data.category}</span>
               <span class={`${styles.metaDate} mono`}>{fmt.format(featured.data.date)}</span>
             </div>
-            <h2 class="heading h1" style="margin-bottom:18px">{featured.data.title}</h2>
-            <p class="body" style="color:rgba(255,255,255,.82);margin-bottom:28px">{featured.data.excerpt}</p>
-            <a href={path(lang, `/news/${slugOf(featured.id)}`)} class="link-rule" style="align-self:flex-start;font-size:12px">{t.news.readMore}</a>
+            <h2 class="heading h1 mb-4">{featured.data.title}</h2>
+            <p class="body mb-6">{featured.data.excerpt}</p>
+            <a href={path(lang, `/news/${slugOf(featured.id)}`)} class={`link-rule ${styles.readMore}`}>{t.news.readMore}</a>
           </div>
         </div>
       </div>
     </section>
   )}
 
-  <section style="padding:32px 0 96px">
+  <section class={styles.gridSection}>
     <div class="wrap">
       <div class={styles.grid}>
+        {cards.length === 0 && <p class={styles.empty}>{t.news.empty}</p>}
         {cards.map((post) => (
-          <article class={styles.card} style={`grid-column:span ${post.data.span ?? 2}`}>
+          <article class={styles.card} style={`--span:${post.data.span ?? 2}`}>
             <div
               class={styles.cardPhoto}
-              style={`height:${(post.data.span ?? 2) >= 3 ? 260 : 200}px;background-image:url('${post.data.image ?? '/assets/car-paddock.jpg'}')`}
+              style={`--photo-h:${(post.data.span ?? 2) >= 3 ? 260 : 200}px;--photo:url('${post.data.image ?? '/assets/car-paddock.jpg'}')`}
               role="img"
               aria-label={post.data.title}
             />
             <div class={styles.cardBody}>
-              <div class={styles.meta} style="margin-bottom:16px">
+              <div class={`${styles.meta} mb-4`}>
                 <span class="badge badge-outline">{post.data.category}</span>
-                <span class={`${styles.metaDate} mono`} style="font-size:12px">{fmt.format(post.data.date)}</span>
+                <span class={`${styles.metaDate} mono`}>{fmt.format(post.data.date)}</span>
               </div>
-              <h3 class="heading h3" style="margin-bottom:12px">{post.data.title}</h3>
-              <p class="body small" style="color:rgba(255,255,255,.72);margin-bottom:22px">{post.data.excerpt}</p>
+              <h3 class="heading h3 mb-3">{post.data.title}</h3>
+              <p class="body small muted mb-5">{post.data.excerpt}</p>
               <a href={path(lang, `/news/${slugOf(post.id)}`)} class={`link-rule ${styles.cardLink}`}>{t.news.readMore}</a>
             </div>
           </article>
@@ -103,9 +110,10 @@ const briefs = sorted.filter((p) => p.data.kind === 'brief');
   <section class={styles.briefs}>
     <div class="wrap">
       <div class={styles.briefsHead}>
-        <h2 class="heading h2" style="margin:0">{t.news.briefsTitle}</h2>
-        <a href={path(lang, '/news')} class="link-rule" style="border:0">{t.news.archive}</a>
+        <h2 class="heading h2 flush">{t.news.briefsTitle}</h2>
+        <a href={path(lang, '/news')} class={`link-rule ${styles.archiveLink}`}>{t.news.archive}</a>
       </div>
+      {briefs.length === 0 && <p class={styles.empty}>{t.news.empty}</p>}
       {briefs.map((post) => (
         <a class={styles.brief} href={path(lang, `/news/${slugOf(post.id)}`)}>
           <span class={`${styles.briefDate} mono`}>{fmtShort.format(post.data.date)}</span>

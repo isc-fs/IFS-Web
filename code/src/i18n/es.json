@@ -5,7 +5,8 @@
     "competition": "Competición",
     "sponsors": "Patrocinadores",
     "news": "Actualidad",
-    "cta": "Patrocina"
+    "cta": "Patrocina",
+    "menu": "Menú"
   },
   "home": {
     "heroEyebrow": "Universidad Pontificia Comillas ICAI · Madrid",
@@ -526,8 +527,7 @@
     "heroEyebrow": "Actualidad",
     "heroTitle": "Lo que pasa en el box.",
     "heroLead": "Temporada, competiciones, avances técnicos y vida de equipo. Todo lo que publicamos, ordenado por fecha.",
-    "filters": [
-      "Todo",
+    "categories": [
       "Competición",
       "Equipo",
       "Técnica",
@@ -535,7 +535,8 @@
     ],
     "readMore": "Leer más",
     "archive": "Ver archivo",
-    "briefsTitle": "Breves"
+    "briefsTitle": "Breves",
+    "empty": "Todavía no hay publicaciones en esta sección."
   },
   "footer": {
     "tagline": "ISC Formula Student Racing Team. Equipo de competición estudiantil de la Universidad Pontificia Comillas ICAI, en Madrid.",

@@ -144,3 +144,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ── sm ──────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .leadGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Vertical member counts: wider tracking than a label, tighter than the
+   nav's, so the figure reads as a specimen rather than a heading. */
+.count {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--isc-c-text-mut);
+}

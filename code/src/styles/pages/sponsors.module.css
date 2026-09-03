@@ -60,7 +60,10 @@
 .tierNote {
   margin: 0;
   font-size: var(--isc-fs-caption);
-  color: rgba(255, 255, 255, 0.4);
+  /* Was rgba(255,255,255,.4) — 3.18:1 on the racing-green ground, below the
+     4.5:1 AA floor for text under 18.66px, and this is the only copy on the
+     wall that carries tier meaning. The contextual token measures 5.96:1. */
+  color: var(--isc-c-text-mut);
 }
 
 .logoRow {
@@ -189,4 +192,41 @@
   .partnerGrid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ── sm ──────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .statsGrid,
+  .whyGrid,
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: var(--isc-space-5);
+  }
+  /* A 148px input is narrower than the text being typed into it. */
+  .logoBox {
+    width: 100%;
+  }
+}
+
+/* The alternate light ground, one step warmer than paper. */
+.groundAlt {
+  background: var(--isc-l-bg-alt);
+}
+
+.statBig {
+  font-size: var(--isc-fs-display-m);
+}
+
+.partnerTitle {
+  margin: var(--isc-space-5) 0 var(--isc-space-3);
+}
+
+.wallNote {
+  margin: var(--isc-space-2) 0 0;
+  color: var(--isc-c-text-mut);
+}
+
+.dossierMeta {
+  margin: var(--isc-space-6) 0 0;
+  color: var(--isc-c-text-mut);
 }

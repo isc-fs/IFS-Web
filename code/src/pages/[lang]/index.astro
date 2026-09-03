@@ -33,7 +33,7 @@ const upcoming = events.map((e) => ({ ...e[lang], days: daysUntil(e.date) }));
     size="xl"
     rule
   >
-    <div class="actions" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:32px">
+    <div class="actions">
       <a href={path(lang, '/sponsors')} class="btn btn-primary btn-lg">{t.home.ctaPrimary}</a>
       <a href={path(lang, '/team')} class="btn btn-secondary btn-lg">{t.home.ctaSecondary}</a>
     </div>
@@ -73,7 +73,7 @@ const upcoming = events.map((e) => ({ ...e[lang], days: daysUntil(e.date) }));
       <div class={styles.eventGrid}>
         {upcoming.map((e) => (
           <article class={styles.eventCard}>
-            <span class="badge badge-outline" style="align-self:flex-start">{e.tag}</span>
+            <span class="badge badge-outline self-start">{e.tag}</span>
             <div class={styles.countdown}>
               <span class={styles.days}>{e.days}</span>
               <span class={styles.daysLabel}>{lang === 'es' ? 'días' : 'days'}</span>
@@ -93,9 +93,9 @@ const upcoming = events.map((e) => ({ ...e[lang], days: daysUntil(e.date) }));
     <div class={styles.joinPhoto} role="img" aria-label="ISC FS Racing Team" />
     <div class={styles.joinBody}>
       <p class="eyebrow">{t.home.joinEyebrow}</p>
-      <h2 class="heading display-m" style="margin-bottom:18px">{t.home.joinTitle}</h2>
+      <h2 class="heading display-m mb-4">{t.home.joinTitle}</h2>
       <hr class="rule" />
-      <p class="lead" style="max-width:48ch">{t.home.joinLead}</p>
+      <p class={`lead ${styles.joinLead}`}>{t.home.joinLead}</p>
       <div class={styles.joinPoints}>
         {t.home.joinPoints.map((p) => (
           <div class={styles.joinPoint}>
@@ -104,7 +104,7 @@ const upcoming = events.map((e) => ({ ...e[lang], days: daysUntil(e.date) }));
           </div>
         ))}
       </div>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <div class="actions">
         <a href={path(lang, '/team')} class="btn btn-primary">{t.home.joinCta}</a>
         <a href={path(lang, '/news')} class="btn btn-ghost">{t.home.joinAlt}</a>
       </div>

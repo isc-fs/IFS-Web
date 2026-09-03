@@ -12,7 +12,15 @@
   border-bottom: var(--isc-border-w) solid var(--isc-c-border);
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  /* The logo is the home link; its tap area has to clear the minimum too. */
+  min-height: var(--isc-tap-min);
+}
+
 .logo {
+  display: block;
   height: 30px;
   width: auto;
 }
@@ -45,7 +53,7 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: var(--isc-space-5);
 }
 
 .langSwitch {
@@ -54,6 +62,8 @@
 }
 
 .langSwitch a {
+  display: flex;
+  align-items: center;
   font-family: var(--isc-font-display);
   font-size: var(--isc-fs-micro);
   font-weight: 600;
@@ -68,6 +78,12 @@
   color: var(--isc-green-900);
 }
 
+/* The disclosure only exists below sm. Above it the row nav is authoritative. */
+.disclosure {
+  display: none;
+}
+
+/* ── 900px: the nav takes its own row, and the header becomes touch-likely ── */
 @media (max-width: 900px) {
   .header {
     flex-wrap: wrap;
@@ -80,5 +96,171 @@
   .nav ul {
     gap: var(--isc-space-5);
     flex-wrap: wrap;
+  }
+  /* Tablets are touched, not pointed at. */
+  .nav a,
+  .langSwitch a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--isc-tap-min);
+  }
+}
+
+/* ── sm: one 64px row and a disclosure ───────────────────────────────────── */
+@media (max-width: 640px) {
+  .header {
+    flex-wrap: nowrap;
+    row-gap: 0;
+    gap: var(--isc-space-4);
+    padding: var(--isc-space-2) var(--isc-page-pad);
+    min-height: 64px;
+  }
+
+  /* Both of these are duplicated inside the panel below. */
+  .nav,
+  .actions {
+    display: none;
+  }
+
+  .disclosure {
+    display: block;
+    margin-left: auto;
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--isc-space-3);
+    min-height: var(--isc-tap-min);
+    padding: 0 var(--isc-space-1);
+    cursor: pointer;
+    font-family: var(--isc-font-display);
+    font-size: var(--isc-fs-micro);
+    font-weight: 600;
+    letter-spacing: var(--isc-ls-label);
+    text-transform: uppercase;
+    color: var(--isc-c-nav-active);
+    list-style: none;
+  }
+
+  /* Suppress the default disclosure triangle in both engine families. */
+  .toggle::-webkit-details-marker {
+    display: none;
+  }
+  .toggle::marker {
+    content: '';
+  }
+
+  .toggle:focus-visible {
+    outline: var(--isc-rule-w) solid var(--isc-gold);
+    outline-offset: 4px;
+  }
+
+  /* Three rules that become a cross when open. Square ends, no radius —
+     the same geometry as the gold rule used throughout the site. */
+  .bars,
+  .bars::before,
+  .bars::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    transition: transform var(--isc-dur-fast) var(--isc-ease),
+                background var(--isc-dur-fast) var(--isc-ease),
+                top var(--isc-dur-fast) var(--isc-ease);
+  }
+
+  .bars {
+    position: relative;
+  }
+
+  .bars::before,
+  .bars::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .bars::before {
+    top: -7px;
+  }
+  .bars::after {
+    top: 7px;
+  }
+
+  .disclosure[open] .bars {
+    background: transparent;
+  }
+  .disclosure[open] .bars::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  .disclosure[open] .bars::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--isc-green-900);
+    border-bottom: var(--isc-border-w) solid var(--isc-c-border);
+    padding: var(--isc-space-2) var(--isc-page-pad) var(--isc-space-5);
+  }
+
+  .panel ul {
+    display: block;
+    list-style: none;
+    margin: 0 0 var(--isc-space-4);
+    padding: 0;
+  }
+
+  .panel li + li {
+    border-top: var(--isc-border-w) solid var(--isc-c-border);
+  }
+
+  .panel a {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    font-family: var(--isc-font-display);
+    font-size: var(--isc-fs-h4);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--isc-ls-label);
+    color: var(--isc-c-nav);
+  }
+
+  .panel a[aria-current='page'] {
+    color: var(--isc-c-nav-active);
+  }
+
+  /* The gold rule marks where the current page begins, exactly as it marks
+     where a heading begins elsewhere in the system. */
+  .panel a[aria-current='page']::before {
+    content: '';
+    width: 20px;
+    height: var(--isc-rule-w);
+    margin-right: var(--isc-space-3);
+    background: var(--isc-c-nav-underline);
+  }
+
+  .panelFoot {
+    display: flex;
+    align-items: center;
+    gap: var(--isc-space-4);
+  }
+
+  .panelFoot .langSwitch a {
+    display: flex;
+    align-items: center;
+    min-height: var(--isc-tap-min);
+    padding: 0 var(--isc-space-4);
+  }
+
+  .panelFoot :global(.btn) {
+    flex: 1;
   }
 }

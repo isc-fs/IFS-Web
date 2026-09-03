@@ -100,3 +100,15 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ── sm ──────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .dynGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tableNote {
+  margin: var(--isc-space-4) 0 0;
+  color: var(--isc-c-text-mut);
+}

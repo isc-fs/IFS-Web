@@ -32,10 +32,10 @@ const t = useTranslations(lang);
     <div class={`wrap ${styles.what}`}>
       <div>
         <hr class="rule rule-lg" />
-        <h2 class="heading h2" style="margin-bottom:24px">{t.comp.whatTitle}</h2>
-        <p class="lead" style="color:var(--isc-graphite);margin-bottom:18px">{t.comp.what1}</p>
+        <h2 class="heading h2 mb-5">{t.comp.whatTitle}</h2>
+        <p class="lead mb-4">{t.comp.what1}</p>
         <p class="body muted">{t.comp.what2}</p>
-        <p class="body muted" style="margin:0">{t.comp.what3}</p>
+        <p class="body muted flush">{t.comp.what3}</p>
       </div>
       <div class={styles.facts}>
         {t.comp.facts.map((f) => <Stat value={f.v} label={f.l} />)}
@@ -54,11 +54,11 @@ const t = useTranslations(lang);
         {t.comp.staticEvents.map((e) => (
           <article class={styles.staticCard}>
             <div class={styles.staticHead}>
-              <h3 class="heading h4" style="margin:0">{e.name}</h3>
+              <h3 class="heading h4 flush">{e.name}</h3>
               <span class={`${styles.points} mono`}>{e.points}</span>
             </div>
             <hr class="rule rule-sm" />
-            <p class="body small" style="margin:0;color:rgba(255,255,255,.78)">{e.desc}</p>
+            <p class="body small muted flush">{e.desc}</p>
           </article>
         ))}
       </div>
@@ -72,8 +72,8 @@ const t = useTranslations(lang);
         {t.comp.dynEvents.map((e) => (
           <article class={styles.dynCard}>
             <span class={`${styles.dynNo} mono`}>{e.no}</span>
-            <h3 class="heading h4" style="margin:0">{e.name}</h3>
-            <p class="body small" style="margin:0;color:rgba(255,255,255,.74)">{e.desc}</p>
+            <h3 class="heading h4 flush">{e.name}</h3>
+            <p class="body small muted flush">{e.desc}</p>
             <p class={`${styles.dynPoints} mono`}>{e.points}</p>
           </article>
         ))}
@@ -84,7 +84,7 @@ const t = useTranslations(lang);
   <section class="section">
     <div class={`wrap ${styles.split}`}>
       <div>
-        <h2 class="heading h2" style="margin-bottom:22px">{t.comp.tableTitle}</h2>
+        <h2 class="heading h2 mb-5">{t.comp.tableTitle}</h2>
         <table class="table">
           <thead>
             <tr>
@@ -103,13 +103,13 @@ const t = useTranslations(lang);
             ))}
           </tbody>
         </table>
-        <p class="mono caption" style="margin-top:18px;color:rgba(255,255,255,.4)">{t.comp.tableNote}</p>
+        <p class={`mono caption ${styles.tableNote}`}>{t.comp.tableNote}</p>
       </div>
 
       <aside class={styles.scrutBox}>
         <p class="eyebrow">{t.comp.scrutEyebrow}</p>
-        <h3 class="heading h3" style="margin-bottom:16px">{t.comp.scrutTitle}</h3>
-        <p class="body" style="color:rgba(255,255,255,.82);margin-bottom:24px">{t.comp.scrutText}</p>
+        <h3 class="heading h3 mb-4">{t.comp.scrutTitle}</h3>
+        <p class="body mb-5">{t.comp.scrutText}</p>
         <a href={path(lang, '/news')} class="btn btn-secondary btn-sm">{t.comp.scrutCta}</a>
       </aside>
     </div>

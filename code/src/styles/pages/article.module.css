@@ -1,0 +1,38 @@
+/* Single newsroom post. Previously the entire layout lived in eleven inline
+   style attributes on the template, including two hardcoded white text
+   colours that assumed the dark ground. */
+
+.header {
+  padding: var(--isc-space-9) 0 var(--isc-space-7);
+}
+
+/* Longer than --isc-maxw-prose: an article carries images at this width. */
+.measure {
+  max-width: 840px;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--isc-space-3);
+  margin-bottom: var(--isc-space-5);
+}
+
+.figure {
+  margin-bottom: var(--isc-space-7);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.bodyWrap {
+  max-width: 840px;
+  padding-bottom: var(--isc-space-9);
+}
+
+.back {
+  margin-top: var(--isc-space-7);
+}

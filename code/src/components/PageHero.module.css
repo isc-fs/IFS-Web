@@ -1,7 +1,19 @@
 .hero {
+  --hero-scrim-end: rgba(7, 19, 13, 0.22);
+
   position: relative;
   display: flex;
   align-items: flex-end;
+  min-height: var(--hero-min-h, 52vh);
+  background-image:
+    linear-gradient(
+      var(--hero-angle, 90deg),
+      rgba(4, 49, 30, 0.95) 0%,
+      rgba(7, 19, 13, 0.74) 48%,
+      var(--hero-scrim-end) 100%
+    ),
+    var(--hero-image);
+  background-position: var(--hero-focus, 50% 45%);
   background-size: cover;
 }
 
@@ -21,13 +33,13 @@
   margin: 0;
   font-size: var(--isc-fs-body-l);
   line-height: 1.62;
-  color: rgba(255, 255, 255, 0.84);
+  color: var(--isc-c-text);
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: var(--isc-space-3);
   margin-top: var(--isc-space-6);
 }
 
@@ -35,5 +47,20 @@
   .inner {
     padding-top: 88px;
     padding-bottom: 56px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    /* Copy now spans the full measure, so the thin end of the scrim has to
+       carry text too. Legibility must not depend on which photograph is behind. */
+    --hero-scrim-end: rgba(7, 19, 13, 0.45);
+  }
+  .inner {
+    padding-top: var(--isc-space-8);
+    padding-bottom: var(--isc-space-7);
+  }
+  .title {
+    max-width: 16ch;
   }
 }

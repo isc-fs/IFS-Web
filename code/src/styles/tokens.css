@@ -115,11 +115,25 @@
   --isc-dur-slow: 320ms;
   --isc-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
 
+  /* Interaction */
+  --isc-tap-min: 44px; /* WCAG 2.5.5 minimum interactive target */
+
   /* Layout */
   --isc-maxw-prose: 68ch;
   --isc-maxw-content: 1240px;
   --isc-page-pad: 40px;
 }
+
+/* Breakpoints.
+ *
+ * Custom properties cannot be used inside a media query, so these are the
+ * canonical values written out. Use these two and no others:
+ *
+ *   sm  640px  single column, disclosure nav, mobile type step
+ *   lg 1080px  multi-column grids collapse to two
+ *
+ * SiteHeader and PageHero additionally carry a 900px query for the header
+ * row and hero padding, which sits between the two and is intentional. */
 
 /* Grounds. Put .isc-dark or .isc-light on any container; components read only
  * the contextual --isc-c-* variables, so grounds nest to any depth. */

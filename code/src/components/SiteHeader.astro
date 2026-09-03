@@ -11,14 +11,15 @@ interface Props {
 const { lang, current, self = '/' } = Astro.props;
 const t = useTranslations(lang);
 const items = navItems(lang, current);
+const codes = Object.keys(languages) as Lang[];
 ---
 
 <header class={styles.header}>
-  <a href={path(lang)} aria-label="ISC Formula Student — home">
+  <a class={styles.brand} href={path(lang)} aria-label="ISC Formula Student — home">
     <img class={styles.logo} src="/assets/logo-full-white.png" alt="ISC Formula Student Racing Team" />
   </a>
 
-  <nav class={styles.nav} aria-label={t.nav.home}>
+  <nav class={styles.nav} aria-label={t.nav.menu}>
     <ul>
       {items.map((item) => (
         <li>
@@ -30,9 +31,9 @@ const items = navItems(lang, current);
 
   <div class={styles.actions}>
     <div class={styles.langSwitch}>
-      {Object.keys(languages).map((code) => (
+      {codes.map((code) => (
         <a
-          href={path(code as Lang, self)}
+          href={path(code, self)}
           hreflang={code}
           aria-current={code === lang ? 'true' : undefined}
         >{code}</a>
@@ -40,4 +41,41 @@ const items = navItems(lang, current);
     </div>
     <a href={path(lang, '/sponsors')} class="btn btn-primary btn-sm">{t.nav.cta}</a>
   </div>
+
+  {/*
+    Native disclosure rather than a script or a checkbox hack. The site ships
+    no JavaScript at all, and <details> gives keyboard operation, the
+    expanded/collapsed state and screen-reader semantics for free — none of
+    which a styled checkbox would. Hidden above the sm breakpoint, so only one
+    of the two navigations is ever in the accessibility tree.
+  */}
+  <details class={styles.disclosure}>
+    <summary class={styles.toggle}>
+      <span class={styles.bars} aria-hidden="true"></span>
+      <span>{t.nav.menu}</span>
+    </summary>
+
+    <nav class={styles.panel} aria-label={t.nav.menu}>
+      <ul>
+        {items.map((item) => (
+          <li>
+            <a href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+
+      <div class={styles.panelFoot}>
+        <div class={styles.langSwitch}>
+          {codes.map((code) => (
+            <a
+              href={path(code, self)}
+              hreflang={code}
+              aria-current={code === lang ? 'true' : undefined}
+            >{code}</a>
+          ))}
+        </div>
+        <a href={path(lang, '/sponsors')} class="btn btn-primary btn-sm">{t.nav.cta}</a>
+      </div>
+    </nav>
+  </details>
 </header>

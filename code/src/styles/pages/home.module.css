@@ -195,3 +195,20 @@
     padding: 64px var(--isc-page-pad);
   }
 }
+
+/* ── sm ──────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .metaGrid,
+  .eventGrid {
+    grid-template-columns: 1fr;
+  }
+  /* Two columns made these wrap "IFS-08 · IFS-09 en diseño" onto three
+     lines; a key/value pair needs the full measure to read as one fact. */
+  .joinBody {
+    padding: var(--isc-space-7) var(--isc-page-pad);
+  }
+}
+
+.joinLead {
+  max-width: 48ch;
+}

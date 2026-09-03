@@ -38,7 +38,7 @@ const t = useTranslations(lang);
       <div class={styles.statsGrid}>
         {t.spon.stats.map((s) => (
           <div>
-            <p class="stat-value" style="font-size:44px">{s.v}</p>
+            <p class={`stat-value ${styles.statBig}`}>{s.v}</p>
             <p class="stat-label">{s.l}</p>
           </div>
         ))}
@@ -57,24 +57,24 @@ const t = useTranslations(lang);
       <div class={styles.whyGrid}>
         {t.spon.why.map((w) => (
           <div class={styles.whyItem}>
-            <h3 class="heading h3" style="margin-bottom:12px">{w.title}</h3>
-            <p class="body muted" style="margin:0">{w.text}</p>
+            <h3 class="heading h3 mb-3">{w.title}</h3>
+            <p class="body muted flush">{w.text}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section isc-light" style="background:var(--isc-cream)">
+  <section class={`section isc-light ${styles.groundAlt}`}>
     <div class="wrap">
       <p class="eyebrow">{t.spon.partnerEyebrow}</p>
-      <h2 class="heading h1" style="margin-bottom:40px">{t.spon.partnerTitle}</h2>
+      <h2 class="heading h1 mb-7">{t.spon.partnerTitle}</h2>
       <div class={styles.partnerGrid}>
         {t.spon.partners.map((p) => (
           <article class={styles.partnerCard}>
             <span class="badge badge-green">{p.tag}</span>
-            <h3 class="heading h4" style="margin:20px 0 12px">{p.title}</h3>
-            <p class="body small muted" style="margin:0">{p.text}</p>
+            <h3 class={`heading h4 ${styles.partnerTitle}`}>{p.title}</h3>
+            <p class="body small muted flush">{p.text}</p>
           </article>
         ))}
       </div>
@@ -117,7 +117,7 @@ const t = useTranslations(lang);
           </div>
         </div>
       ))}
-      <p class="mono caption" style="margin:8px 0 0;color:rgba(255,255,255,.38)">{t.spon.wallNote}</p>
+      <p class={`mono caption ${styles.wallNote}`}>{t.spon.wallNote}</p>
     </div>
   </section>
 
@@ -165,13 +165,13 @@ const t = useTranslations(lang);
 
       <aside class={styles.dossier}>
         <img class={styles.dossierLogo} src="/assets/logo-full-white.png" alt="ISC Formula Student" />
-        <h3 class="heading h3" style="margin-bottom:14px">{t.spon.dossierTitle}</h3>
-        <p class="body" style="color:rgba(255,255,255,.78);margin-bottom:28px">{t.spon.dossierText}</p>
+        <h3 class="heading h3 mb-3">{t.spon.dossierTitle}</h3>
+        <p class="body muted mb-6">{t.spon.dossierText}</p>
         <div class={styles.dossierButtons}>
           <a class="btn btn-secondary btn-block" href="/assets/Dossier-ISC-FS-08-ES.pdf" target="_blank" rel="noopener">{t.spon.dossierEs}</a>
           <a class="btn btn-secondary btn-block" href="/assets/Dossier-ISC-FS-08-EN.pdf" target="_blank" rel="noopener">{t.spon.dossierEn}</a>
         </div>
-        <p class="mono caption" style="margin:26px 0 0;color:rgba(255,255,255,.5)">{t.spon.dossierMeta}</p>
+        <p class={`mono caption ${styles.dossierMeta}`}>{t.spon.dossierMeta}</p>
       </aside>
     </div>
   </section>

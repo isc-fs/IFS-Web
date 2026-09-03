@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
+import styles from '../../../styles/pages/article.module.css';
 import { type Lang, useTranslations, path } from '../../../i18n';
 
 export async function getStaticPaths() {
@@ -38,29 +39,29 @@ const fmt = new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', {
   description={post.data.excerpt}
 >
   <article>
-    <header style="padding:96px 0 40px">
-      <div class="wrap" style="max-width:840px">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+    <header class={styles.header}>
+      <div class={`wrap ${styles.measure}`}>
+        <div class={styles.metaRow}>
           <span class="badge badge-gold">{post.data.category}</span>
-          <span class="mono caption" style="color:rgba(255,255,255,.6)">{fmt.format(post.data.date)}</span>
+          <span class="mono caption muted">{fmt.format(post.data.date)}</span>
         </div>
-        <h1 class="heading h1" style="margin-bottom:20px">{post.data.title}</h1>
+        <h1 class="heading h1 mb-5">{post.data.title}</h1>
         <hr class="rule rule-lg" />
-        {post.data.excerpt && <p class="lead" style="color:rgba(255,255,255,.84)">{post.data.excerpt}</p>}
+        {post.data.excerpt && <p class="lead">{post.data.excerpt}</p>}
       </div>
     </header>
 
     {post.data.image && (
-      <div class="wrap" style="margin-bottom:48px">
-        <img src={post.data.image} alt={post.data.title} style="width:100%;height:auto" />
+      <div class={`wrap ${styles.figure}`}>
+        <img src={post.data.image} alt={post.data.title} class={styles.image} />
       </div>
     )}
 
-    <div class="wrap" style="max-width:840px;padding-bottom:96px">
-      <div class="prose" style="color:rgba(255,255,255,.84)">
+    <div class={`wrap ${styles.bodyWrap}`}>
+      <div class="prose">
         <Content />
       </div>
-      <p style="margin-top:48px">
+      <p class={styles.back}>
         <a href={path(lang, '/news')} class="link-rule">{t.news.archive}</a>
       </p>
     </div>
