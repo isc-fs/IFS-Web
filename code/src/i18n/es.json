@@ -11,7 +11,7 @@
   "home": {
     "heroEyebrow": "Universidad Pontificia Comillas ICAI · Madrid",
     "heroTitle": "Lo diseñamos, lo fabricamos, lo llevamos a pista.",
-    "heroLead": "Somos el ISC Formula Student Racing Team: más de 80 estudiantes de la Universidad Pontificia Comillas que conciben, construyen y compiten con un monoplaza eléctrico hecho desde cero. Nueve temporadas, ocho prototipos y una ambición clara: estar entre los mejores de Europa.",
+    "heroLead": "Somos el ISC Formula Student Racing Team: más de 80 estudiantes de la Universidad Pontificia Comillas que diseñan, fabrican y compiten con un monoplaza eléctrico hecho desde cero. Nueve temporadas, ocho prototipos y una ambición clara: estar entre los mejores de Europa.",
     "ctaPrimary": "Patrocina el proyecto",
     "ctaSecondary": "Conoce al equipo",
     "meta": [
@@ -71,7 +71,7 @@
     "heroTitle": "Más de 80 estudiantes. Cinco verticales. Un monoplaza.",
     "introTitle": "Un equipo organizado como una empresa de ingeniería",
     "intro1": "El ISC FS Racing Team está formado por más de 80 estudiantes de grado y máster de Ingeniería Industrial, Ingeniería de Telecomunicaciones, Business Analytics y Administración y Dirección de Empresas.",
-    "intro2": "A nivel organizativo el equipo cuenta con un Team Leader, responsable de la estrategia y los objetivos de la temporada en sus aspectos técnicos, financieros y de comunicación. Los Directores Técnicos concentran la especialización por áreas: verifican en detalle cada decisión técnica y supervisan el avance de cada departamento.",
+    "intro2": "El equipo tiene un Team Leader, responsable de la estrategia y los objetivos de la temporada en lo técnico, lo financiero y lo comunicativo. Los directores técnicos reúnen el conocimiento especializado de cada área. Verifican en detalle cada decisión técnica y supervisan el avance de cada departamento.",
     "stats": [
       {
         "v": "80+",
@@ -253,8 +253,8 @@
     "heroEyebrow": "Competición",
     "heroTitle": "Mil puntos, ocho pruebas, un solo coche.",
     "whatTitle": "¿Qué es Formula Student?",
-    "what1": "Formula Student es una competición internacional que reúne a las mejores escuelas de ingeniería y desafía a equipos formados exclusivamente por estudiantes a concebir, diseñar, fabricar y competir con un monoplaza eléctrico construido desde cero.",
-    "what2": "Formula Student Spain se celebra cada agosto en el icónico Circuito de Montmeló, en Barcelona. La competición se divide en dos grandes bloques: pruebas estáticas y pruebas dinámicas.",
+    "what1": "Formula Student es una competición internacional que reúne a las mejores escuelas de ingeniería y desafía a equipos formados exclusivamente por estudiantes a diseñar, fabricar y competir con un monoplaza eléctrico construido desde cero.",
+    "what2": "Formula Student Spain se celebra cada agosto en el Circuito de Montmeló, en Barcelona. La competición se divide en dos grandes bloques: pruebas estáticas y pruebas dinámicas.",
     "what3": "Entre ambas, los equipos deben superar varias inspecciones técnicas con más de mil puntos de verificación. Solo los coches que las superan pueden rodar.",
     "facts": [
       {
@@ -416,15 +416,15 @@
       },
       {
         "title": "Innovación en movilidad eléctrica",
-        "text": "El equipo forma e innova en los sistemas eléctricos que están tomando la industria de la movilidad. Nuestros miembros adquieren conocimiento específico para trabajar en ecosistemas de vehículo eléctrico."
+        "text": "El equipo forma e innova en los sistemas eléctricos que están tomando la industria de la movilidad. Nuestros miembros adquieren conocimiento específico para trabajar en el sector del vehículo eléctrico."
       },
       {
         "title": "Innovación en conducción autónoma",
-        "text": "Lideramos las primeras implantaciones de sistemas autónomos eléctricos dentro de Formula Student en Madrid, preparando a nuestros miembros para entornos reales de movilidad autónoma."
+        "text": "Lideramos las primeras implantaciones de sistemas autónomos eléctricos dentro de Formula Student en Madrid. Eso prepara a nuestros miembros para entornos reales de movilidad autónoma."
       },
       {
         "title": "Ingeniería española en Europa",
-        "text": "Apoyo a los ingenieros y a las universidades españolas en la escena europea e internacional, compitiendo en las citas de referencia de la categoría eléctrica."
+        "text": "Apoyo a los ingenieros y a las universidades españolas en la escena europea e internacional. Competimos en las citas de referencia de la categoría eléctrica."
       }
     ],
     "partnerEyebrow": "Modelos de colaboración",

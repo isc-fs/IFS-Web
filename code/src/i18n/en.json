@@ -11,7 +11,7 @@
   "home": {
     "heroEyebrow": "Universidad Pontificia Comillas ICAI · Madrid",
     "heroTitle": "We design it, we build it, we race it",
-    "heroLead": "We are the ISC Formula Student Racing Team: more than 80 students from Universidad Pontificia Comillas who conceive, build and compete with an electric single-seater made from scratch. Nine seasons, eight prototypes and one clear ambition — to belong among the best in Europe.",
+    "heroLead": "We are the ISC Formula Student Racing Team: more than 80 students from Universidad Pontificia Comillas who design, build and race an electric single-seater made from scratch. Nine seasons, eight prototypes and one clear ambition: to be among the best in Europe.",
     "ctaPrimary": "Sponsor the project",
     "ctaSecondary": "Meet the team",
     "meta": [
@@ -71,7 +71,7 @@
     "heroTitle": "Over 80 students. Five verticals. One single-seater.",
     "introTitle": "A team organised like an engineering company",
     "intro1": "The ISC FS Racing Team is made up of more than 80 undergraduate and master's students from Industrial Engineering, Telecommunications Engineering, Business Analytics and Business Administration.",
-    "intro2": "Organisationally the team has a Team Leader responsible for the season's overall strategy and objectives, covering technical, financial and communication matters. The Technical Directors carry the specialisation by area: they verify every technical decision in detail and supervise each department's progress.",
+    "intro2": "The team has a Team Leader, responsible for the season's strategy and objectives across technical, financial and communication matters. The technical directors hold the specialist knowledge for each area. They check every technical decision in detail and follow each department's progress.",
     "stats": [
       {
         "v": "80+",
@@ -253,8 +253,8 @@
     "heroEyebrow": "Competition",
     "heroTitle": "A thousand points, eight events, one car.",
     "whatTitle": "What is Formula Student?",
-    "what1": "Formula Student is an international competition that brings together the best engineering schools and challenges teams made up exclusively of students to conceive, design, manufacture and compete with an electric single-seater built from scratch.",
-    "what2": "In Spain, Formula Student takes place every August at the iconic Circuit de Montmeló in Barcelona. The competition is divided into two distinct parts: static events and dynamic events.",
+    "what1": "Formula Student is an international competition that brings together the best engineering schools and challenges teams made up exclusively of students to design, manufacture and race an electric single-seater built from scratch.",
+    "what2": "In Spain, Formula Student takes place every August at the Circuit de Montmeló in Barcelona. The competition is divided into two parts: static events and dynamic events.",
     "what3": "Between them, teams must pass technical inspections with over a thousand compliance items. Only the cars that clear them are allowed to run.",
     "facts": [
       {
@@ -408,7 +408,7 @@
     ],
     "whyEyebrow": "Why sponsor us",
     "whyTitle": "What you would be supporting",
-    "whyLead": "Because of its international character, Formula Student is the perfect showroom for any company that recognises the potential of engineering and youth combined.",
+    "whyLead": "Because it is international, Formula Student is the perfect shop window for any company that recognises the potential of engineering and youth combined.",
     "why": [
       {
         "title": "Young talent",
@@ -416,15 +416,15 @@
       },
       {
         "title": "Innovation in electric mobility",
-        "text": "The team trains and innovates in the electrical systems taking over the mobility industry. Members acquire the specific knowledge needed to work in electric vehicle ecosystems."
+        "text": "The team trains and innovates in the electrical systems taking over the mobility industry. Members acquire the specific knowledge needed to work in the electric vehicle sector."
       },
       {
         "title": "Innovation in autonomous driving",
-        "text": "We are leading the first efforts to implement autonomous electric systems within Formula Student in Madrid, preparing our members for real autonomous mobility environments."
+        "text": "We are leading the first efforts to implement autonomous electric systems within Formula Student in Madrid. That prepares our members for real autonomous mobility work."
       },
       {
         "title": "Spanish engineering in Europe",
-        "text": "Support for Spanish engineers and Spanish universities on the European and international stage, competing at the benchmark events of the electric category."
+        "text": "Support for Spanish engineers and Spanish universities on the European and international stage. We compete at the benchmark events of the electric category."
       }
     ],
     "partnerEyebrow": "Ways to collaborate",
