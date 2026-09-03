@@ -3,9 +3,14 @@ name: Render ROADMAP
 # Regenerates ROADMAP.md from .github/roadmap.yaml + GitHub issue state.
 #
 # Triggers on every push to `dev` (which also covers merges of feat/fix
-# PRs, since those all target `dev`) and a manual workflow_dispatch. The
-# autocommit it creates uses GITHUB_TOKEN, which per GitHub's rules does
-# not recursively trigger this workflow — so no infinite loop.
+# PRs, since those all target `dev`) and a manual workflow_dispatch.
+#
+# `dev` is a protected branch, so this workflow cannot push to it directly:
+# the GitHub Actions app cannot be granted a ruleset bypass at repository
+# level. Instead it force-updates the `chore/roadmap` branch and opens a
+# pull request into `dev`, so the regenerated file arrives the same way
+# every other change does. When that PR merges, this workflow runs again,
+# finds ROADMAP.md already current and exits — so there is no loop.
 
 on:
   push:
@@ -16,8 +21,9 @@ jobs:
   render:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      issues:   read
+      contents:      write
+      issues:        read
+      pull-requests: write
     steps:
       - name: Checkout dev
         uses: actions/checkout@v4
@@ -40,14 +46,38 @@ jobs:
           GITHUB_REPOSITORY:  ${{ github.repository }}
         run: python3 .github/scripts/render_roadmap.py
 
-      - name: Commit if changed
+      - name: Open or update the ROADMAP pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if git diff --quiet -- ROADMAP.md; then
-            echo "ROADMAP.md is up-to-date; no commit needed."
+            echo "ROADMAP.md is up-to-date; no pull request needed."
             exit 0
           fi
+
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # A single long-lived bot branch, rewritten each time. Note there is
+          # deliberately no [skip ci] marker: CI is a required status check on
+          # dev, so the PR needs it to run in order to become mergeable.
+          git checkout -B chore/roadmap
           git add ROADMAP.md
-          git commit -m "chore: regenerate ROADMAP.md [skip ci]"
-          git push origin HEAD:dev
+          git commit -m "chore: regenerate ROADMAP.md"
+          git push --force origin chore/roadmap
+
+          existing=$(gh pr list --head chore/roadmap --base dev --state open \
+                       --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            echo "Updated existing pull request #$existing."
+          else
+            gh pr create --base dev --head chore/roadmap \
+              --title "chore: regenerate ROADMAP.md" \
+              --body "$(printf '%s\n' \
+                'Automated regeneration of `ROADMAP.md` from `.github/roadmap.yaml`' \
+                'and the current state of the tracking issues.' \
+                '' \
+                'Opened by the `Render ROADMAP` workflow because `dev` is protected' \
+                'and cannot be pushed to directly. Review the diff and merge — the' \
+                'branch is rewritten in place if the roadmap changes again first.')"
+          fi
