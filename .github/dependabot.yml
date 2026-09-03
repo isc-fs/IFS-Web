@@ -1,0 +1,25 @@
+version: 2
+
+updates:
+  # Astro and its toolchain. Grouped so the team reviews one PR a month
+  # rather than five, and targeted at dev like every other change.
+  - package-ecosystem: npm
+    directory: /code
+    schedule:
+      interval: monthly
+    target-branch: dev
+    open-pull-requests-limit: 3
+    labels: [fix]
+    groups:
+      astro:
+        patterns: ['astro', '@astrojs/*']
+      dev-tooling:
+        patterns: ['typescript', '@types/*']
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    target-branch: dev
+    open-pull-requests-limit: 2
+    labels: [fix]
