@@ -1,0 +1,114 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import Stat from '../../components/Stat.astro';
+import styles from '../../styles/pages/team.module.css';
+import { type Lang, useTranslations, languages } from '../../i18n';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+const members = Array.from({ length: 6 });
+---
+
+<Base
+  lang={lang}
+  current="team"
+  self="/team"
+  title={`${t.nav.team} · ISC Formula Student`}
+  description={t.team.intro1}
+>
+  <PageHero
+    eyebrow={t.team.heroEyebrow}
+    title={t.team.heroTitle}
+    image="/assets/team-members.jpg"
+    focus="50% 32%"
+  />
+
+  <section class="section">
+    <div class={`wrap ${styles.intro}`}>
+      <div>
+        <hr class="rule rule-lg" />
+        <h2 class="heading h2" style="margin-bottom:22px">{t.team.introTitle}</h2>
+        <p class="lead" style="margin-bottom:18px;color:rgba(255,255,255,.84)">{t.team.intro1}</p>
+        <p class="body muted">{t.team.intro2}</p>
+      </div>
+      <div class={styles.introStats}>
+        {t.team.stats.map((s) => <Stat value={s.v} label={s.l} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class={`section ${styles.leadership}`}>
+    <div class="wrap">
+      <SectionHead
+        eyebrow={t.team.leadEyebrow}
+        title={t.team.leadTitle}
+        lead={t.team.leadLead}
+        gap={54}
+      />
+
+      <div class={styles.leadGrid}>
+        {t.team.leads.map((p) => (
+          <div>
+            <div class={styles.portrait}><span class="mono">{t.team.photoSlot}</span></div>
+            <p class={styles.role}>{p.role}</p>
+            <p class={styles.name}>{p.name}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class={styles.techGrid}>
+        {t.team.techLeads.map((p) => (
+          <div class={styles.techItem}>
+            <p class={styles.role}>{p.role}</p>
+            <p>{p.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <SectionHead
+        eyebrow={t.team.vertEyebrow}
+        title={t.team.vertTitle}
+        lead={t.team.vertLead}
+        gap={20}
+      />
+
+      {t.team.verticals.map((v) => (
+        <div class={styles.vertical}>
+          <div>
+            <div class={styles.vertHead}>
+              <span class={`${styles.vertCode} mono`}>{v.code}</span>
+              <h3 class="heading h3" style="margin:0">{v.name}</h3>
+            </div>
+            <p class="body muted" style="margin-bottom:22px">{v.blurb}</p>
+            <p class="mono caption" style="margin:0;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.42)">{v.count}</p>
+          </div>
+          <div>
+            <div class={styles.deptGrid}>
+              {v.depts.map((d) => (
+                <div class={styles.dept}>
+                  <p class={styles.deptName}>{d.name}</p>
+                  <p class={styles.deptLead}>{d.lead}</p>
+                </div>
+              ))}
+            </div>
+            <div class={styles.memberGrid}>
+              {members.map(() => <div class={styles.memberSlot} />)}
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <p class="mono caption" style="margin:0;color:rgba(255,255,255,.38)">{t.team.photoNote}</p>
+    </div>
+  </section>
+</Base>

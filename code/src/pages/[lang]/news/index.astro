@@ -1,0 +1,118 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import styles from '../../../styles/pages/news.module.css';
+import { type Lang, useTranslations, path, languages } from '../../../i18n';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+
+const all = await getCollection('news', ({ id }) => id.startsWith(`${lang}/`));
+const sorted = all.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const slugOf = (id: string) => id.replace(`${lang}/`, '').replace(/\.md$/, '');
+const fmt = new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+});
+const fmtShort = new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric'
+});
+
+const featured = sorted.find((p) => p.data.kind === 'featured') ?? sorted[0];
+const cards = sorted.filter((p) => p.data.kind === 'card');
+const briefs = sorted.filter((p) => p.data.kind === 'brief');
+---
+
+<Base
+  lang={lang}
+  current="news"
+  self="/news"
+  title={`${t.nav.news} · ISC Formula Student`}
+  description={t.news.heroLead}
+>
+  <section style="padding:104px 0 0">
+    <div class="wrap">
+      <p class="eyebrow">{t.news.heroEyebrow}</p>
+      <h1 class="heading display-l" style="margin-bottom:20px">{t.news.heroTitle}</h1>
+      <hr class="rule rule-lg" />
+      <p class="lead" style="max-width:56ch;margin-bottom:40px">{t.news.heroLead}</p>
+      <div class={styles.filters}>
+        {t.news.filters.map((f) => <span class="badge badge-outline badge-pill">{f}</span>)}
+      </div>
+    </div>
+  </section>
+
+  {featured && (
+    <section style="padding:0 0 40px">
+      <div class="wrap">
+        <div class={styles.featured}>
+          <div
+            class={styles.featuredPhoto}
+            style={`background-image:url('${featured.data.image ?? '/assets/car-cornering.jpg'}')`}
+            role="img"
+            aria-label={featured.data.title}
+          />
+          <div class={styles.featuredBody}>
+            <div class={styles.meta}>
+              <span class="badge badge-gold">{featured.data.category}</span>
+              <span class={`${styles.metaDate} mono`}>{fmt.format(featured.data.date)}</span>
+            </div>
+            <h2 class="heading h1" style="margin-bottom:18px">{featured.data.title}</h2>
+            <p class="body" style="color:rgba(255,255,255,.82);margin-bottom:28px">{featured.data.excerpt}</p>
+            <a href={path(lang, `/news/${slugOf(featured.id)}`)} class="link-rule" style="align-self:flex-start;font-size:12px">{t.news.readMore}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section style="padding:32px 0 96px">
+    <div class="wrap">
+      <div class={styles.grid}>
+        {cards.map((post) => (
+          <article class={styles.card} style={`grid-column:span ${post.data.span ?? 2}`}>
+            <div
+              class={styles.cardPhoto}
+              style={`height:${(post.data.span ?? 2) >= 3 ? 260 : 200}px;background-image:url('${post.data.image ?? '/assets/car-paddock.jpg'}')`}
+              role="img"
+              aria-label={post.data.title}
+            />
+            <div class={styles.cardBody}>
+              <div class={styles.meta} style="margin-bottom:16px">
+                <span class="badge badge-outline">{post.data.category}</span>
+                <span class={`${styles.metaDate} mono`} style="font-size:12px">{fmt.format(post.data.date)}</span>
+              </div>
+              <h3 class="heading h3" style="margin-bottom:12px">{post.data.title}</h3>
+              <p class="body small" style="color:rgba(255,255,255,.72);margin-bottom:22px">{post.data.excerpt}</p>
+              <a href={path(lang, `/news/${slugOf(post.id)}`)} class={`link-rule ${styles.cardLink}`}>{t.news.readMore}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class={styles.briefs}>
+    <div class="wrap">
+      <div class={styles.briefsHead}>
+        <h2 class="heading h2" style="margin:0">{t.news.briefsTitle}</h2>
+        <a href={path(lang, '/news')} class="link-rule" style="border:0">{t.news.archive}</a>
+      </div>
+      {briefs.map((post) => (
+        <a class={styles.brief} href={path(lang, `/news/${slugOf(post.id)}`)}>
+          <span class={`${styles.briefDate} mono`}>{fmtShort.format(post.data.date)}</span>
+          <span class={styles.briefTitle}>{post.data.title}</span>
+          <span class={styles.briefCat}>{post.data.category}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

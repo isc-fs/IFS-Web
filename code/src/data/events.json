@@ -1,0 +1,66 @@
+[
+  {
+    "key": "sel",
+    "date": "2026-10-05",
+    "es": {
+      "tag": "Reclutamiento",
+      "name": "Cierre de selección 2026/2027",
+      "place": "Comillas ICAI · Madrid",
+      "date": "5 octubre 2026"
+    },
+    "en": {
+      "tag": "Recruitment",
+      "name": "Selection closes 2026/2027",
+      "place": "Comillas ICAI · Madrid",
+      "date": "5 October 2026"
+    }
+  },
+  {
+    "key": "freeze",
+    "date": "2027-01-18",
+    "es": {
+      "tag": "Hito técnico",
+      "name": "Design freeze del IFS-09",
+      "place": "Taller ISC",
+      "date": "18 enero 2027"
+    },
+    "en": {
+      "tag": "Milestone",
+      "name": "IFS-09 design freeze",
+      "place": "ISC workshop",
+      "date": "18 January 2027"
+    }
+  },
+  {
+    "key": "aut",
+    "date": "2027-07-26",
+    "es": {
+      "tag": "Competición",
+      "name": "Formula Student Austria",
+      "place": "Red Bull Ring · Austria",
+      "date": "26–31 julio 2027"
+    },
+    "en": {
+      "tag": "Competition",
+      "name": "Formula Student Austria",
+      "place": "Red Bull Ring · Austria",
+      "date": "26–31 July 2027"
+    }
+  },
+  {
+    "key": "esp",
+    "date": "2027-08-16",
+    "es": {
+      "tag": "Competición",
+      "name": "Formula Student Spain",
+      "place": "Circuit de Barcelona-Catalunya",
+      "date": "16–22 agosto 2027"
+    },
+    "en": {
+      "tag": "Competition",
+      "name": "Formula Student Spain",
+      "place": "Circuit de Barcelona-Catalunya",
+      "date": "16–22 August 2027"
+    }
+  }
+]

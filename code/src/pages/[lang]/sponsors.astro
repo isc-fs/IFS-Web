@@ -1,0 +1,161 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import styles from '../../styles/pages/sponsors.module.css';
+import { type Lang, useTranslations, languages } from '../../i18n';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+---
+
+<Base
+  lang={lang}
+  current="sponsors"
+  self="/sponsors"
+  title={`${t.nav.sponsors} · ISC Formula Student`}
+  description={t.spon.heroLead}
+>
+  <PageHero
+    eyebrow={t.spon.heroEyebrow}
+    title={t.spon.heroTitle}
+    lead={t.spon.heroLead}
+    image="/assets/nose-sponsors.jpg"
+    height="56vh"
+    focus="60% 42%"
+    angle={84}
+    rule
+  />
+
+  <section class={styles.statsBand}>
+    <div class="wrap">
+      <div class={styles.statsGrid}>
+        {t.spon.stats.map((s) => (
+          <div>
+            <p class="stat-value" style="font-size:44px">{s.v}</p>
+            <p class="stat-label">{s.l}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section isc-light">
+    <div class="wrap">
+      <SectionHead
+        eyebrow={t.spon.whyEyebrow}
+        title={t.spon.whyTitle}
+        lead={t.spon.whyLead}
+        gap={56}
+      />
+      <div class={styles.whyGrid}>
+        {t.spon.why.map((w) => (
+          <div class={styles.whyItem}>
+            <h3 class="heading h3" style="margin-bottom:12px">{w.title}</h3>
+            <p class="body muted" style="margin:0">{w.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section isc-light" style="background:var(--isc-cream)">
+    <div class="wrap">
+      <p class="eyebrow">{t.spon.partnerEyebrow}</p>
+      <h2 class="heading h1" style="margin-bottom:40px">{t.spon.partnerTitle}</h2>
+      <div class={styles.partnerGrid}>
+        {t.spon.partners.map((p) => (
+          <article class={styles.partnerCard}>
+            <span class="badge badge-green">{p.tag}</span>
+            <h3 class="heading h4" style="margin:20px 0 12px">{p.title}</h3>
+            <p class="body small muted" style="margin:0">{p.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <SectionHead
+        eyebrow={t.spon.wallEyebrow}
+        title={t.spon.wallTitle}
+        lead={t.spon.wallLead}
+        gap={56}
+      />
+      {t.spon.tiers.map((tier) => (
+        <div class={styles.tier}>
+          <div class={styles.tierHead}>
+            <p class={styles.tierName}>{tier.tier}</p>
+            {tier.note && <p class={`${styles.tierNote} mono`}>{tier.note}</p>}
+          </div>
+          <div class={styles.logoRow}>
+            {tier.logos.map((logo) => (
+              <div class={styles.logoBox}><span>{logo}</span></div>
+            ))}
+          </div>
+        </div>
+      ))}
+      <p class="mono caption" style="margin:8px 0 0;color:rgba(255,255,255,.38)">{t.spon.wallNote}</p>
+    </div>
+  </section>
+
+  <section class={`section ${styles.contact}`}>
+    <div class={`wrap ${styles.contactGrid}`}>
+      <div>
+        <SectionHead
+          eyebrow={t.spon.formEyebrow}
+          title={t.spon.formTitle}
+          lead={t.spon.formLead}
+          gap={36}
+        />
+
+        <!-- Static build: point action= at your form handler (Formspree, Netlify
+             Forms, an API route) before going live. -->
+        <form method="post" action="#">
+          <div class={styles.formRow}>
+            <div class="field">
+              <label class="label" for="f-name">{t.spon.form.name}</label>
+              <input class="input" id="f-name" name="name" type="text" required />
+            </div>
+            <div class="field">
+              <label class="label" for="f-org">{t.spon.form.org}</label>
+              <input class="input" id="f-org" name="organisation" type="text" />
+            </div>
+            <div class="field">
+              <label class="label" for="f-email">{t.spon.form.email}</label>
+              <input class="input" id="f-email" name="email" type="email" required />
+            </div>
+            <div class="field">
+              <label class="label" for="f-interest">{t.spon.form.interest}</label>
+              <select class="input" id="f-interest" name="interest">
+                {t.spon.form.interestOpts.map((o) => <option>{o}</option>)}
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="f-msg">{t.spon.form.message}</label>
+            <textarea class="input" id="f-msg" name="message" rows="4"></textarea>
+            <span class="help">{t.spon.form.help}</span>
+          </div>
+          <button class="btn btn-primary btn-lg" type="submit">{t.spon.form.submit}</button>
+        </form>
+      </div>
+
+      <aside class={styles.dossier}>
+        <img class={styles.dossierLogo} src="/assets/logo-full-white.png" alt="ISC Formula Student" />
+        <h3 class="heading h3" style="margin-bottom:14px">{t.spon.dossierTitle}</h3>
+        <p class="body" style="color:rgba(255,255,255,.78);margin-bottom:28px">{t.spon.dossierText}</p>
+        <div class={styles.dossierButtons}>
+          <a class="btn btn-secondary btn-block" href="/assets/Dossier-ISC-FS-08-ES.pdf" target="_blank" rel="noopener">{t.spon.dossierEs}</a>
+          <a class="btn btn-secondary btn-block" href="/assets/Dossier-ISC-FS-08-EN.pdf" target="_blank" rel="noopener">{t.spon.dossierEn}</a>
+        </div>
+        <p class="mono caption" style="margin:26px 0 0;color:rgba(255,255,255,.5)">{t.spon.dossierMeta}</p>
+      </aside>
+    </div>
+  </section>
+</Base>

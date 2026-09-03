@@ -1,0 +1,43 @@
+---
+import styles from './SiteHeader.module.css';
+import { type Lang, navItems, useTranslations, path, languages } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  current: string;
+  self?: string;
+}
+
+const { lang, current, self = '/' } = Astro.props;
+const t = useTranslations(lang);
+const items = navItems(lang, current);
+---
+
+<header class={styles.header}>
+  <a href={path(lang)} aria-label="ISC Formula Student — home">
+    <img class={styles.logo} src="/assets/logo-full-white.png" alt="ISC Formula Student Racing Team" />
+  </a>
+
+  <nav class={styles.nav} aria-label={t.nav.home}>
+    <ul>
+      {items.map((item) => (
+        <li>
+          <a href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <div class={styles.actions}>
+    <div class={styles.langSwitch}>
+      {Object.keys(languages).map((code) => (
+        <a
+          href={path(code as Lang, self)}
+          hreflang={code}
+          aria-current={code === lang ? 'true' : undefined}
+        >{code}</a>
+      ))}
+    </div>
+    <a href={path(lang, '/sponsors')} class="btn btn-primary btn-sm">{t.nav.cta}</a>
+  </div>
+</header>

@@ -1,0 +1,617 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "team": "Equipo",
+    "competition": "Competición",
+    "sponsors": "Patrocinadores",
+    "news": "Actualidad",
+    "cta": "Patrocina"
+  },
+  "home": {
+    "heroEyebrow": "Universidad Pontificia Comillas ICAI · Madrid",
+    "heroTitle": "Lo diseñamos, lo fabricamos, lo llevamos a pista.",
+    "heroLead": "Somos el ISC Formula Student Racing Team: más de 80 estudiantes de la Universidad Pontificia Comillas que conciben, construyen y compiten con un monoplaza eléctrico hecho desde cero. Nueve temporadas, ocho prototipos y una ambición clara: estar entre los mejores de Europa.",
+    "ctaPrimary": "Patrocina el proyecto",
+    "ctaSecondary": "Conoce al equipo",
+    "meta": [
+      {
+        "k": "Temporada",
+        "v": "2026 / 2027"
+      },
+      {
+        "k": "Monoplaza",
+        "v": "IFS-08 · IFS-09 en diseño"
+      },
+      {
+        "k": "Dorsal",
+        "v": "133"
+      },
+      {
+        "k": "Competiciones 2026",
+        "v": "FS Austria · FS Spain"
+      }
+    ],
+    "sponsorsLabel": "Con el apoyo de",
+    "sponsorStrip": [
+      "Iberdrola",
+      "Gestamp",
+      "Comillas ICAI",
+      "Siemens",
+      "Festo",
+      "Altair",
+      "ARRK"
+    ],
+    "sponsorsLink": "Ver todos",
+    "eventsEyebrow": "Calendario",
+    "eventsTitle": "Próximas citas",
+    "eventsLead": "El curso arranca con la selección de nuevos miembros y termina en pista. Estas son las fechas que marcan la temporada 2026/2027.",
+    "joinEyebrow": "Únete al ISC",
+    "joinTitle": "Aquí se aprende construyendo.",
+    "joinLead": "Buscamos estudiantes de grado y máster de Comillas ICAI con ganas de asumir responsabilidad real: piezas que se fabrican, plazos que no se mueven y un coche que tiene que rodar en agosto.",
+    "joinPoints": [
+      {
+        "n": "01",
+        "text": "Trabajo técnico real desde el primer mes, dentro de una de las cinco verticales del equipo."
+      },
+      {
+        "n": "02",
+        "text": "Estructura profesional: informes, revisiones de diseño, control de costes y proveedores."
+      },
+      {
+        "n": "03",
+        "text": "Competición internacional con el equipo, en Austria y España."
+      }
+    ],
+    "joinCta": "Ver estructura del equipo",
+    "joinAlt": "Leer la actualidad"
+  },
+  "team": {
+    "heroEyebrow": "El equipo",
+    "heroTitle": "Más de 80 estudiantes. Cinco verticales. Un monoplaza.",
+    "introTitle": "Un equipo organizado como una empresa de ingeniería",
+    "intro1": "El ISC FS Racing Team está formado por más de 80 estudiantes de grado y máster de Ingeniería Industrial, Ingeniería de Telecomunicaciones, Business Analytics y Administración y Dirección de Empresas.",
+    "intro2": "A nivel organizativo el equipo cuenta con un Team Leader, responsable de la estrategia y los objetivos de la temporada en sus aspectos técnicos, financieros y de comunicación. Los Directores Técnicos concentran la especialización por áreas: verifican en detalle cada decisión técnica y supervisan el avance de cada departamento.",
+    "stats": [
+      {
+        "v": "80+",
+        "l": "Miembros activos"
+      },
+      {
+        "v": "5",
+        "l": "Verticales técnicas"
+      },
+      {
+        "v": "4",
+        "l": "Titulaciones"
+      },
+      {
+        "v": "17",
+        "l": "Departamentos"
+      }
+    ],
+    "leadEyebrow": "Dirección",
+    "leadTitle": "Quién responde de qué",
+    "leadLead": "La dirección de proyecto y las áreas transversales sostienen la temporada; los directores técnicos responden del coche.",
+    "leads": [
+      {
+        "role": "Team Leader",
+        "name": "Jaime de Carvajal Torres"
+      },
+      {
+        "role": "Operaciones",
+        "name": "Blanca Díaz Ocejo"
+      },
+      {
+        "role": "Alianzas",
+        "name": "Alfonso Ascaso Carrasco"
+      },
+      {
+        "role": "Marketing y Medios",
+        "name": "Selina Oliver de Bustamante"
+      }
+    ],
+    "techLeads": [
+      {
+        "role": "Mechanical",
+        "name": "Miguel Ángel Medina Lazcano · Fernando Mª Tobar Pérez"
+      },
+      {
+        "role": "Tractive System",
+        "name": "Nicolás Huertas Romero"
+      },
+      {
+        "role": "Electronics",
+        "name": "Jaime Landa Cereceda"
+      },
+      {
+        "role": "Driverless",
+        "name": "Álvaro González Tabernero"
+      },
+      {
+        "role": "Statics",
+        "name": "Laura Valero González"
+      },
+      {
+        "role": "Software",
+        "name": "Sergio Jiménez Romero"
+      }
+    ],
+    "vertEyebrow": "Estructura",
+    "vertTitle": "Las cinco verticales",
+    "vertLead": "Cada vertical agrupa los departamentos que comparten interfaz técnica, y cada departamento tiene un responsable que rinde cuentas ante su director.",
+    "photoSlot": "Foto pendiente",
+    "photoNote": "Retratos de miembros pendientes de sustituir por las fotos oficiales de temporada.",
+    "verticals": [
+      {
+        "code": "V1",
+        "name": "Mechanical",
+        "count": "6 departamentos",
+        "blurb": "Chasis, aerodinámica, suspensión y todo lo que convierte la potencia en vuelta rápida. Es la vertical más grande del equipo.",
+        "depts": [
+          {
+            "name": "Aero & Cooling",
+            "lead": "Pablo Aparicio de la Vega"
+          },
+          {
+            "name": "Chassis & Structural",
+            "lead": "Alejandro Romero Fontán"
+          },
+          {
+            "name": "Braking & Steering",
+            "lead": "Sandra Rodríguez Juliani"
+          },
+          {
+            "name": "Suspension & Dynamics",
+            "lead": "Ignacio Ramos Villar · Rodrigo García Diéguez"
+          },
+          {
+            "name": "Powertrain",
+            "lead": "Manuel Mª Cantón Barat"
+          },
+          {
+            "name": "Composites & Manufacturing",
+            "lead": "Responsable por asignar"
+          }
+        ]
+      },
+      {
+        "code": "V2",
+        "name": "Tractive System",
+        "count": "2 departamentos",
+        "blurb": "La cadena de tracción de alta tensión: acumulador, refrigeración de celdas, inversores y seguridad eléctrica.",
+        "depts": [
+          {
+            "name": "Batteries",
+            "lead": "Mario Rodríguez Criado"
+          },
+          {
+            "name": "Powertrain (TS)",
+            "lead": "Responsable por asignar"
+          }
+        ]
+      },
+      {
+        "code": "V3",
+        "name": "Electronics",
+        "count": "3 departamentos",
+        "blurb": "Electrónica de control, subsistemas embarcados y telemetría. Sin datos no hay decisiones.",
+        "depts": [
+          {
+            "name": "Control Electronics",
+            "lead": "Responsable por asignar"
+          },
+          {
+            "name": "Electronic Subsystems",
+            "lead": "Responsable por asignar"
+          },
+          {
+            "name": "Telemetry",
+            "lead": "Andrés Sánchez de Águeda"
+          }
+        ]
+      },
+      {
+        "code": "V4",
+        "name": "Driverless",
+        "count": "2 departamentos",
+        "blurb": "Percepción, SLAM, planificación de trayectoria y control. Lideramos la primera implantación autónoma de Formula Student en Madrid.",
+        "depts": [
+          {
+            "name": "Integration",
+            "lead": "Jaime Pérez Gil"
+          },
+          {
+            "name": "Pipeline & Software",
+            "lead": "Sergio Jiménez Romero"
+          }
+        ]
+      },
+      {
+        "code": "V5",
+        "name": "Statics",
+        "count": "3 departamentos",
+        "blurb": "Las pruebas estáticas valen 325 de los 1.000 puntos: diseño, costes y plan de negocio se preparan todo el año.",
+        "depts": [
+          {
+            "name": "Engineering Design",
+            "lead": "Responsable por asignar"
+          },
+          {
+            "name": "Cost Report",
+            "lead": "Responsable por asignar"
+          },
+          {
+            "name": "Business Plan",
+            "lead": "Responsable por asignar"
+          }
+        ]
+      }
+    ]
+  },
+  "comp": {
+    "heroEyebrow": "Competición",
+    "heroTitle": "Mil puntos, ocho pruebas, un solo coche.",
+    "whatTitle": "¿Qué es Formula Student?",
+    "what1": "Formula Student es una competición internacional que reúne a las mejores escuelas de ingeniería y desafía a equipos formados exclusivamente por estudiantes a concebir, diseñar, fabricar y competir con un monoplaza eléctrico construido desde cero.",
+    "what2": "Formula Student Spain se celebra cada agosto en el icónico Circuito de Montmeló, en Barcelona. La competición se divide en dos grandes bloques: pruebas estáticas y pruebas dinámicas.",
+    "what3": "Entre ambas, los equipos deben superar varias inspecciones técnicas con más de mil puntos de verificación. Solo los coches que las superan pueden rodar.",
+    "facts": [
+      {
+        "v": "1.000",
+        "l": "Puntos en juego"
+      },
+      {
+        "v": "8",
+        "l": "Pruebas puntuables"
+      },
+      {
+        "v": "1.000+",
+        "l": "Puntos de verificación técnica"
+      }
+    ],
+    "staticEyebrow": "Bloque estático",
+    "staticTitle": "Pruebas estáticas",
+    "staticLead": "Se juzga el criterio de ingeniería, no solo el resultado: por qué está diseñado así, cuánto cuesta fabricarlo y si el proyecto se sostiene como negocio.",
+    "staticEvents": [
+      {
+        "name": "Engineering Design",
+        "points": "150",
+        "desc": "Defensa del diseño ante jueces de la industria: decisiones, simulación, validación y trazabilidad de cada elección técnica."
+      },
+      {
+        "name": "Cost & Manufacturing",
+        "points": "100",
+        "desc": "Coste real del monoplaza pieza a pieza, procesos de fabricación y justificación económica de cada componente."
+      },
+      {
+        "name": "Business Plan",
+        "points": "75",
+        "desc": "Presentación del proyecto como oportunidad de negocio ante un panel inversor. Segundo puesto en 2021, podio en 2024."
+      }
+    ],
+    "dynEyebrow": "Bloque dinámico",
+    "dynTitle": "Pruebas dinámicas",
+    "dynLead": "Cinco pruebas que llevan el monoplaza al límite: velocidad punta, estabilidad en curva, fiabilidad, eficiencia y autonomía.",
+    "dynEvents": [
+      {
+        "no": "D1",
+        "name": "Acceleration",
+        "points": "75",
+        "desc": "75 metros en línea recta desde parado. Tracción, control de par y transferencia de carga."
+      },
+      {
+        "no": "D2",
+        "name": "Skidpad",
+        "points": "75",
+        "desc": "Ocho de radio constante. Mide equilibrio lateral y reparto de masas."
+      },
+      {
+        "no": "D3",
+        "name": "Autocross",
+        "points": "100",
+        "desc": "Vuelta rápida sobre un trazado de conos. Fija la parrilla del endurance."
+      },
+      {
+        "no": "D4",
+        "name": "Endurance",
+        "points": "325",
+        "desc": "22 kilómetros con cambio de piloto. La prueba que más puntúa y la que más coches rompe."
+      },
+      {
+        "no": "D5",
+        "name": "Efficiency",
+        "points": "100",
+        "desc": "Energía consumida frente a tiempo por vuelta. Premia la gestión del acumulador."
+      }
+    ],
+    "tableTitle": "Reparto de puntos",
+    "tableCols": {
+      "event": "Prueba",
+      "type": "Bloque",
+      "points": "Puntos"
+    },
+    "tableRows": [
+      {
+        "event": "Business Plan",
+        "type": "Estática",
+        "points": "75"
+      },
+      {
+        "event": "Cost & Manufacturing",
+        "type": "Estática",
+        "points": "100"
+      },
+      {
+        "event": "Engineering Design",
+        "type": "Estática",
+        "points": "150"
+      },
+      {
+        "event": "Acceleration",
+        "type": "Dinámica",
+        "points": "75"
+      },
+      {
+        "event": "Skidpad",
+        "type": "Dinámica",
+        "points": "75"
+      },
+      {
+        "event": "Autocross",
+        "type": "Dinámica",
+        "points": "100"
+      },
+      {
+        "event": "Efficiency",
+        "type": "Dinámica",
+        "points": "100"
+      },
+      {
+        "event": "Endurance",
+        "type": "Dinámica",
+        "points": "325"
+      },
+      {
+        "event": "Total",
+        "type": "—",
+        "points": "1.000"
+      }
+    ],
+    "tableNote": "Reparto de referencia del reglamento Formula Student para la categoría eléctrica.",
+    "scrutEyebrow": "Scrutineering",
+    "scrutTitle": "Antes de rodar, pasar la inspección",
+    "scrutText": "Inspección mecánica, eléctrica, prueba de vuelco, frenada y estanqueidad. Es el filtro que deja a media parrilla fuera de las dinámicas. El ISC lo ha superado cinco temporadas consecutivas.",
+    "scrutCta": "Ver actualidad"
+  },
+  "spon": {
+    "heroEyebrow": "Patrocinadores",
+    "heroTitle": "Innovación, juntos.",
+    "heroLead": "Buscamos empresas con experiencia que compartan el mismo impulso innovador y vean el proyecto como lo que es: una cantera de talento e iniciativa entre jóvenes ingenieros a punto de entrar en el mercado laboral.",
+    "stats": [
+      {
+        "v": "80+",
+        "l": "Estudiantes implicados"
+      },
+      {
+        "v": "9",
+        "l": "Temporadas"
+      },
+      {
+        "v": "8",
+        "l": "Monoplazas construidos"
+      },
+      {
+        "v": "3",
+        "l": "Países en competición"
+      }
+    ],
+    "whyEyebrow": "Por qué patrocinarnos",
+    "whyTitle": "Qué estarías apoyando",
+    "whyLead": "Formula Student es, por su carácter internacional, el escaparate perfecto para toda empresa que reconozca el potencial de unir ingeniería y juventud.",
+    "why": [
+      {
+        "title": "Talento joven",
+        "text": "Nuestros miembros trabajan dentro de una estructura muy parecida a la que encontrarán en su primer empleo: informes, plazos, procesos, documentación y, sobre todo, responsabilidad."
+      },
+      {
+        "title": "Innovación en movilidad eléctrica",
+        "text": "El equipo forma e innova en los sistemas eléctricos que están tomando la industria de la movilidad. Nuestros miembros adquieren conocimiento específico para trabajar en ecosistemas de vehículo eléctrico."
+      },
+      {
+        "title": "Innovación en conducción autónoma",
+        "text": "Lideramos las primeras implantaciones de sistemas autónomos eléctricos dentro de Formula Student en Madrid, preparando a nuestros miembros para entornos reales de movilidad autónoma."
+      },
+      {
+        "title": "Ingeniería española en Europa",
+        "text": "Apoyo a los ingenieros y a las universidades españolas en la escena europea e internacional, compitiendo en las citas de referencia de la categoría eléctrica."
+      }
+    ],
+    "partnerEyebrow": "Modelos de colaboración",
+    "partnerTitle": "Tres formas de entrar en el proyecto",
+    "partners": [
+      {
+        "tag": "Finance",
+        "title": "Finance Partner",
+        "text": "Aporta apoyo económico al equipo y respalda líneas de investigación concretas dentro del proyecto."
+      },
+      {
+        "tag": "Fabricación",
+        "title": "Fabrication Partner",
+        "text": "Suministra piezas y componentes o colabora en la fabricación de elementos del monoplaza."
+      },
+      {
+        "tag": "Logística",
+        "title": "Logistics Partner",
+        "text": "Aporta medios al equipo: transporte del vehículo, desplazamientos, herramienta, material de taller o apoyo audiovisual."
+      }
+    ],
+    "wallEyebrow": "Nuestros patrocinadores",
+    "wallTitle": "Quién está detrás del IFS-08",
+    "wallLead": "Buscamos acuerdos a largo plazo en los que ambas partes exploten al máximo el potencial del proyecto y de sus participantes.",
+    "wallNote": "Marcas representadas con su nombre; pendiente sustituir por los logotipos oficiales en la versión final.",
+    "tiers": [
+      {
+        "tier": "Title Sponsor",
+        "note": "Patrocinador principal",
+        "logos": [
+          "Iberdrola"
+        ]
+      },
+      {
+        "tier": "Main Sponsor · Apoyo institucional",
+        "note": "Mismo nivel de relevancia",
+        "logos": [
+          "Fundación Gestamp",
+          "Universidad Pontificia Comillas ICAI"
+        ]
+      },
+      {
+        "tier": "Official Sponsors",
+        "note": "",
+        "logos": [
+          "Siemens",
+          "Festo",
+          "Altair",
+          "ARRK",
+          "Vector",
+          "Santalucía Seguros",
+          "Cesvimap",
+          "Northgate",
+          "JBC",
+          "Marple",
+          "Mobios",
+          "Teade"
+        ]
+      },
+      {
+        "tier": "Associate Sponsors",
+        "note": "",
+        "logos": [
+          "Valmoldes",
+          "Trim Composites",
+          "Elektrisola",
+          "RapidHarness",
+          "NX Technologies",
+          "Huber+Suhner",
+          "Rótulos Renedo",
+          "Dorotea Olmedo"
+        ]
+      }
+    ],
+    "formEyebrow": "Contacto",
+    "formTitle": "Hablemos de la temporada 2026/2027",
+    "formLead": "Cuéntanos qué te interesa y te enviamos el dossier completo con los paquetes de patrocinio y la contrapartida de cada nivel.",
+    "form": {
+      "name": "Nombre y apellidos",
+      "org": "Empresa",
+      "email": "Correo electrónico",
+      "interest": "Tipo de colaboración",
+      "interestOpts": [
+        "Finance Partner",
+        "Fabrication Partner",
+        "Logistics Partner",
+        "Aún por definir"
+      ],
+      "message": "Mensaje",
+      "help": "Respondemos en un plazo máximo de cinco días laborables.",
+      "submit": "Solicitar dossier"
+    },
+    "dossierTitle": "Dossier de patrocinio",
+    "dossierText": "Temporada 2025/2026: historia del equipo, evolución de los monoplazas, estructura, objetivos técnicos y modelos de colaboración.",
+    "dossierEs": "Descargar dossier (ES)",
+    "dossierEn": "Download dossier (EN)",
+    "dossierMeta": "PDF · 15 páginas · Español e inglés"
+  },
+  "news": {
+    "heroEyebrow": "Actualidad",
+    "heroTitle": "Lo que pasa en el box.",
+    "heroLead": "Temporada, competiciones, avances técnicos y vida de equipo. Todo lo que publicamos, ordenado por fecha.",
+    "filters": [
+      "Todo",
+      "Competición",
+      "Equipo",
+      "Técnica",
+      "Patrocinadores"
+    ],
+    "readMore": "Leer más",
+    "archive": "Ver archivo",
+    "briefsTitle": "Breves"
+  },
+  "footer": {
+    "tagline": "ISC Formula Student Racing Team. Equipo de competición estudiantil de la Universidad Pontificia Comillas ICAI, en Madrid.",
+    "addr1": "Universidad Pontificia Comillas ICAI",
+    "addr2": "C/ Alberto Aguilera 25",
+    "addr3": "28015 Madrid · España",
+    "cols": [
+      {
+        "title": "El proyecto",
+        "links": [
+          {
+            "label": "Equipo",
+            "href": "#team"
+          },
+          {
+            "label": "Competición",
+            "href": "#competition"
+          },
+          {
+            "label": "Actualidad",
+            "href": "#news"
+          },
+          {
+            "label": "El monoplaza IFS-08",
+            "href": "#competition"
+          }
+        ]
+      },
+      {
+        "title": "Colabora",
+        "links": [
+          {
+            "label": "Patrocinadores",
+            "href": "#sponsors"
+          },
+          {
+            "label": "Modelos de colaboración",
+            "href": "#sponsors"
+          },
+          {
+            "label": "Dossier de patrocinio",
+            "href": "#sponsors"
+          },
+          {
+            "label": "Únete al equipo",
+            "href": "#team"
+          }
+        ]
+      },
+      {
+        "title": "Contacto",
+        "links": [
+          {
+            "label": "info@iscfsracing.es",
+            "href": "#sponsors"
+          },
+          {
+            "label": "Instagram",
+            "href": "#news"
+          },
+          {
+            "label": "LinkedIn",
+            "href": "#news"
+          },
+          {
+            "label": "YouTube",
+            "href": "#news"
+          }
+        ]
+      }
+    ],
+    "legal": "© 2026 ISC Formula Student Racing Team · Universidad Pontificia Comillas ICAI",
+    "legalLinks": [
+      "Aviso legal",
+      "Política de privacidad",
+      "Cookies"
+    ]
+  }
+}

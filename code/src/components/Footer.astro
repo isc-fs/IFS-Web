@@ -1,0 +1,44 @@
+---
+import styles from './Footer.module.css';
+import { type Lang, useTranslations, path } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+/** Dictionary hrefs are stored language-agnostic ('#team'); prefix them here. */
+const resolve = (href: string) => path(lang, href.replace('#', '/').replace('/home', '/'));
+---
+
+<footer class={styles.footer}>
+  <div class="wrap">
+    <div class={styles.top}>
+      <div>
+        <img class={styles.logo} src="/assets/logo-full-white.png" alt="ISC Formula Student Racing Team" />
+        <p class={styles.tagline}>{t.footer.tagline}</p>
+        <p class={`${styles.address} mono`}>
+          {t.footer.addr1}<br />{t.footer.addr2}<br />{t.footer.addr3}
+        </p>
+      </div>
+
+      {t.footer.cols.map((col) => (
+        <div>
+          <p class={styles.colTitle}>{col.title}</p>
+          <div class={styles.links}>
+            {col.links.map((link) => <a href={resolve(link.href)}>{link.label}</a>)}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class={styles.legal}>
+      <p class="mono">{t.footer.legal}</p>
+      <div class={styles.legalLinks}>
+        {t.footer.legalLinks.map((label) => <a href={path(lang)}>{label}</a>)}
+      </div>
+    </div>
+  </div>
+</footer>

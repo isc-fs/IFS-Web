@@ -1,0 +1,117 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import Stat from '../../components/Stat.astro';
+import styles from '../../styles/pages/competition.module.css';
+import { type Lang, useTranslations, path, languages } from '../../i18n';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+---
+
+<Base
+  lang={lang}
+  current="competition"
+  self="/competition"
+  title={`${t.nav.competition} · ISC Formula Student`}
+  description={t.comp.what1}
+>
+  <PageHero
+    eyebrow={t.comp.heroEyebrow}
+    title={t.comp.heroTitle}
+    image="/assets/car-track-ring.jpg"
+    focus="50% 60%"
+  />
+
+  <section class="section isc-light">
+    <div class={`wrap ${styles.what}`}>
+      <div>
+        <hr class="rule rule-lg" />
+        <h2 class="heading h2" style="margin-bottom:24px">{t.comp.whatTitle}</h2>
+        <p class="lead" style="color:var(--isc-graphite);margin-bottom:18px">{t.comp.what1}</p>
+        <p class="body muted">{t.comp.what2}</p>
+        <p class="body muted" style="margin:0">{t.comp.what3}</p>
+      </div>
+      <div class={styles.facts}>
+        {t.comp.facts.map((f) => <Stat value={f.v} label={f.l} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <SectionHead
+        eyebrow={t.comp.staticEyebrow}
+        title={t.comp.staticTitle}
+        lead={t.comp.staticLead}
+      />
+      <div class={styles.staticGrid}>
+        {t.comp.staticEvents.map((e) => (
+          <article class={styles.staticCard}>
+            <div class={styles.staticHead}>
+              <h3 class="heading h4" style="margin:0">{e.name}</h3>
+              <span class={`${styles.points} mono`}>{e.points}</span>
+            </div>
+            <hr class="rule rule-sm" />
+            <p class="body small" style="margin:0;color:rgba(255,255,255,.78)">{e.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class={`section ${styles.dynamic}`}>
+    <div class="wrap">
+      <SectionHead eyebrow={t.comp.dynEyebrow} title={t.comp.dynTitle} lead={t.comp.dynLead} />
+      <div class={styles.dynGrid}>
+        {t.comp.dynEvents.map((e) => (
+          <article class={styles.dynCard}>
+            <span class={`${styles.dynNo} mono`}>{e.no}</span>
+            <h3 class="heading h4" style="margin:0">{e.name}</h3>
+            <p class="body small" style="margin:0;color:rgba(255,255,255,.74)">{e.desc}</p>
+            <p class={`${styles.dynPoints} mono`}>{e.points}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class={`wrap ${styles.split}`}>
+      <div>
+        <h2 class="heading h2" style="margin-bottom:22px">{t.comp.tableTitle}</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>{t.comp.tableCols.event}</th>
+              <th>{t.comp.tableCols.type}</th>
+              <th class="num">{t.comp.tableCols.points}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {t.comp.tableRows.map((r) => (
+              <tr>
+                <td>{r.event}</td>
+                <td class="muted">{r.type}</td>
+                <td class="num">{r.points}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="mono caption" style="margin-top:18px;color:rgba(255,255,255,.4)">{t.comp.tableNote}</p>
+      </div>
+
+      <aside class={styles.scrutBox}>
+        <p class="eyebrow">{t.comp.scrutEyebrow}</p>
+        <h3 class="heading h3" style="margin-bottom:16px">{t.comp.scrutTitle}</h3>
+        <p class="body" style="color:rgba(255,255,255,.82);margin-bottom:24px">{t.comp.scrutText}</p>
+        <a href={path(lang, '/news')} class="btn btn-secondary btn-sm">{t.comp.scrutCta}</a>
+      </aside>
+    </div>
+  </section>
+</Base>

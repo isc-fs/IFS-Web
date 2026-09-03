@@ -1,0 +1,113 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import styles from '../../styles/pages/home.module.css';
+import events from '../../data/events.json';
+import { type Lang, useTranslations, path, daysUntil, languages } from '../../i18n';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+const upcoming = events.map((e) => ({ ...e[lang], days: daysUntil(e.date) }));
+---
+
+<Base
+  lang={lang}
+  current=""
+  self="/"
+  title="ISC Formula Student Racing Team"
+  description={t.home.heroLead}
+>
+  <PageHero
+    eyebrow={t.home.heroEyebrow}
+    title={t.home.heroTitle}
+    lead={t.home.heroLead}
+    image="/assets/car-track-austria.jpg"
+    height="80vh"
+    focus="56% 46%"
+    angle={88}
+    size="xl"
+    rule
+  >
+    <div class="actions" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:32px">
+      <a href={path(lang, '/sponsors')} class="btn btn-primary btn-lg">{t.home.ctaPrimary}</a>
+      <a href={path(lang, '/team')} class="btn btn-secondary btn-lg">{t.home.ctaSecondary}</a>
+    </div>
+  </PageHero>
+
+  <section class={styles.metaStrip}>
+    <div class="wrap">
+      <div class={styles.metaGrid}>
+        {t.home.meta.map((m) => (
+          <div class={styles.metaCell}>
+            <p class={styles.metaKey}>{m.k}</p>
+            <p class={`${styles.metaValue} mono`}>{m.v}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class={styles.sponsorStrip}>
+    <div class={`wrap ${styles.sponsorRow}`}>
+      <p class={styles.sponsorLabel}>{t.home.sponsorsLabel}</p>
+      <div class={styles.sponsorNames}>
+        {t.home.sponsorStrip.map((name) => <span>{name}</span>)}
+      </div>
+      <a href={path(lang, '/sponsors')} class="link-rule">{t.home.sponsorsLink}</a>
+    </div>
+  </section>
+
+  <section class={`section ${styles.events}`}>
+    <div class="wrap">
+      <SectionHead
+        eyebrow={t.home.eventsEyebrow}
+        title={t.home.eventsTitle}
+        lead={t.home.eventsLead}
+        gap={56}
+      />
+      <div class={styles.eventGrid}>
+        {upcoming.map((e) => (
+          <article class={styles.eventCard}>
+            <span class="badge badge-outline" style="align-self:flex-start">{e.tag}</span>
+            <div class={styles.countdown}>
+              <span class={styles.days}>{e.days}</span>
+              <span class={styles.daysLabel}>{lang === 'es' ? 'días' : 'days'}</span>
+            </div>
+            <div class={styles.eventMeta}>
+              <p class={styles.eventName}>{e.name}</p>
+              <p class={styles.eventPlace}>{e.place}</p>
+              <p class={`${styles.eventDate} mono`}>{e.date}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class={styles.join}>
+    <div class={styles.joinPhoto} role="img" aria-label="ISC FS Racing Team" />
+    <div class={styles.joinBody}>
+      <p class="eyebrow">{t.home.joinEyebrow}</p>
+      <h2 class="heading display-m" style="margin-bottom:18px">{t.home.joinTitle}</h2>
+      <hr class="rule" />
+      <p class="lead" style="max-width:48ch">{t.home.joinLead}</p>
+      <div class={styles.joinPoints}>
+        {t.home.joinPoints.map((p) => (
+          <div class={styles.joinPoint}>
+            <span class="mono">{p.n}</span>
+            <span>{p.text}</span>
+          </div>
+        ))}
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href={path(lang, '/team')} class="btn btn-primary">{t.home.joinCta}</a>
+        <a href={path(lang, '/news')} class="btn btn-ghost">{t.home.joinAlt}</a>
+      </div>
+    </div>
+  </section>
+</Base>

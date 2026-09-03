@@ -1,0 +1,45 @@
+---
+import styles from './PageHero.module.css';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  image: string;
+  /** CSS min-height, e.g. '80vh' */
+  height?: string;
+  /** background-position */
+  focus?: string;
+  /** Overlay gradient angle in degrees */
+  angle?: number;
+  size?: 'xl' | 'l';
+  rule?: boolean;
+}
+
+const {
+  eyebrow,
+  title,
+  lead,
+  image,
+  height = '52vh',
+  focus = '50% 45%',
+  angle = 90,
+  size = 'l',
+  rule = false
+} = Astro.props;
+
+const overlay = `linear-gradient(${angle}deg, rgba(4,49,30,.95) 0%, rgba(7,19,13,.74) 48%, rgba(7,19,13,.22) 100%)`;
+---
+
+<section
+  class={styles.hero}
+  style={`min-height:${height};background-image:${overlay},url('${image}');background-position:${focus}`}
+>
+  <div class={`wrap ${styles.inner}`}>
+    <p class="eyebrow">{eyebrow}</p>
+    <h1 class={`heading ${size === 'xl' ? 'display-xl' : 'display-l'} ${styles.title}`}>{title}</h1>
+    {rule && <hr class="rule rule-lg" />}
+    {lead && <p class={styles.lead}>{lead}</p>}
+    <slot />
+  </div>
+</section>

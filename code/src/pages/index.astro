@@ -1,0 +1,17 @@
+---
+import { defaultLang } from '../i18n';
+const target = `/${defaultLang}/`;
+---
+
+<!doctype html>
+<html lang={defaultLang}>
+  <head>
+    <meta charset="utf-8" />
+    <title>ISC Formula Student Racing Team</title>
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <link rel="canonical" href={target} />
+  </head>
+  <body>
+    <a href={target}>ISC Formula Student Racing Team</a>
+  </body>
+</html>

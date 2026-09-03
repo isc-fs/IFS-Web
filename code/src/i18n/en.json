@@ -1,0 +1,617 @@
+{
+  "nav": {
+    "home": "Home",
+    "team": "Team",
+    "competition": "Competition",
+    "sponsors": "Sponsors",
+    "news": "Newsroom",
+    "cta": "Sponsor us"
+  },
+  "home": {
+    "heroEyebrow": "Universidad Pontificia Comillas ICAI · Madrid",
+    "heroTitle": "We design it, we build it, we race it",
+    "heroLead": "We are the ISC Formula Student Racing Team: more than 80 students from Universidad Pontificia Comillas who conceive, build and compete with an electric single-seater made from scratch. Nine seasons, eight prototypes and one clear ambition — to belong among the best in Europe.",
+    "ctaPrimary": "Sponsor the project",
+    "ctaSecondary": "Meet the team",
+    "meta": [
+      {
+        "k": "Season",
+        "v": "2026 / 2027"
+      },
+      {
+        "k": "Car",
+        "v": "IFS-08 · IFS-09 in design"
+      },
+      {
+        "k": "Race number",
+        "v": "133"
+      },
+      {
+        "k": "Competitions 2026",
+        "v": "FS Austria · FS Spain"
+      }
+    ],
+    "sponsorsLabel": "Supported by",
+    "sponsorStrip": [
+      "Iberdrola",
+      "Gestamp",
+      "Comillas ICAI",
+      "Siemens",
+      "Festo",
+      "Altair",
+      "ARRK"
+    ],
+    "sponsorsLink": "See all",
+    "eventsEyebrow": "Calendar",
+    "eventsTitle": "What's next",
+    "eventsLead": "The year opens with member selection and closes on track. These are the dates that shape the 2026/2027 season.",
+    "joinEyebrow": "Join ISC",
+    "joinTitle": "You learn here by building.",
+    "joinLead": "We are looking for undergraduate and master's students at Comillas ICAI ready to take real responsibility: parts that get manufactured, deadlines that do not move, and a car that has to run in August.",
+    "joinPoints": [
+      {
+        "n": "01",
+        "text": "Real technical work from your first month, inside one of the team's five verticals."
+      },
+      {
+        "n": "02",
+        "text": "A professional structure: reports, design reviews, cost control and supplier management."
+      },
+      {
+        "n": "03",
+        "text": "International competition with the team, in Austria and Spain."
+      }
+    ],
+    "joinCta": "See the team structure",
+    "joinAlt": "Read the newsroom"
+  },
+  "team": {
+    "heroEyebrow": "The team",
+    "heroTitle": "Over 80 students. Five verticals. One single-seater.",
+    "introTitle": "A team organised like an engineering company",
+    "intro1": "The ISC FS Racing Team is made up of more than 80 undergraduate and master's students from Industrial Engineering, Telecommunications Engineering, Business Analytics and Business Administration.",
+    "intro2": "Organisationally the team has a Team Leader responsible for the season's overall strategy and objectives, covering technical, financial and communication matters. The Technical Directors carry the specialisation by area: they verify every technical decision in detail and supervise each department's progress.",
+    "stats": [
+      {
+        "v": "80+",
+        "l": "Active members"
+      },
+      {
+        "v": "5",
+        "l": "Technical verticals"
+      },
+      {
+        "v": "4",
+        "l": "Degree programmes"
+      },
+      {
+        "v": "17",
+        "l": "Departments"
+      }
+    ],
+    "leadEyebrow": "Leadership",
+    "leadTitle": "Who answers for what",
+    "leadLead": "Project management and the cross-functional areas hold the season together; the technical directors answer for the car.",
+    "leads": [
+      {
+        "role": "Team Leader",
+        "name": "Jaime de Carvajal Torres"
+      },
+      {
+        "role": "Operations",
+        "name": "Blanca Díaz Ocejo"
+      },
+      {
+        "role": "Alliances",
+        "name": "Alfonso Ascaso Carrasco"
+      },
+      {
+        "role": "Marketing & Media",
+        "name": "Selina Oliver de Bustamante"
+      }
+    ],
+    "techLeads": [
+      {
+        "role": "Mechanical",
+        "name": "Miguel Ángel Medina Lazcano · Fernando Mª Tobar Pérez"
+      },
+      {
+        "role": "Tractive System",
+        "name": "Nicolás Huertas Romero"
+      },
+      {
+        "role": "Electronics",
+        "name": "Jaime Landa Cereceda"
+      },
+      {
+        "role": "Driverless",
+        "name": "Álvaro González Tabernero"
+      },
+      {
+        "role": "Statics",
+        "name": "Laura Valero González"
+      },
+      {
+        "role": "Software",
+        "name": "Sergio Jiménez Romero"
+      }
+    ],
+    "vertEyebrow": "Structure",
+    "vertTitle": "The five verticals",
+    "vertLead": "Each vertical groups the departments that share a technical interface, and every department has a lead accountable to their director.",
+    "photoSlot": "Photo pending",
+    "photoNote": "Member portraits to be replaced with the official season photography.",
+    "verticals": [
+      {
+        "code": "V1",
+        "name": "Mechanical",
+        "count": "6 departments",
+        "blurb": "Chassis, aerodynamics, suspension and everything that turns power into lap time. The largest vertical on the team.",
+        "depts": [
+          {
+            "name": "Aero & Cooling",
+            "lead": "Pablo Aparicio de la Vega"
+          },
+          {
+            "name": "Chassis & Structural",
+            "lead": "Alejandro Romero Fontán"
+          },
+          {
+            "name": "Braking & Steering",
+            "lead": "Sandra Rodríguez Juliani"
+          },
+          {
+            "name": "Suspension & Dynamics",
+            "lead": "Ignacio Ramos Villar · Rodrigo García Diéguez"
+          },
+          {
+            "name": "Powertrain",
+            "lead": "Manuel Mª Cantón Barat"
+          },
+          {
+            "name": "Composites & Manufacturing",
+            "lead": "Lead to be assigned"
+          }
+        ]
+      },
+      {
+        "code": "V2",
+        "name": "Tractive System",
+        "count": "2 departments",
+        "blurb": "The high-voltage driveline: accumulator, cell cooling, inverters and electrical safety.",
+        "depts": [
+          {
+            "name": "Batteries",
+            "lead": "Mario Rodríguez Criado"
+          },
+          {
+            "name": "Powertrain (TS)",
+            "lead": "Lead to be assigned"
+          }
+        ]
+      },
+      {
+        "code": "V3",
+        "name": "Electronics",
+        "count": "3 departments",
+        "blurb": "Control electronics, on-board subsystems and telemetry. Without data there are no decisions.",
+        "depts": [
+          {
+            "name": "Control Electronics",
+            "lead": "Lead to be assigned"
+          },
+          {
+            "name": "Electronic Subsystems",
+            "lead": "Lead to be assigned"
+          },
+          {
+            "name": "Telemetry",
+            "lead": "Andrés Sánchez de Águeda"
+          }
+        ]
+      },
+      {
+        "code": "V4",
+        "name": "Driverless",
+        "count": "2 departments",
+        "blurb": "Perception, SLAM, path planning and control. We lead the first autonomous Formula Student effort in Madrid.",
+        "depts": [
+          {
+            "name": "Integration",
+            "lead": "Jaime Pérez Gil"
+          },
+          {
+            "name": "Pipeline & Software",
+            "lead": "Sergio Jiménez Romero"
+          }
+        ]
+      },
+      {
+        "code": "V5",
+        "name": "Statics",
+        "count": "3 departments",
+        "blurb": "The static events carry 325 of the 1,000 points: design, cost and business plan are prepared all year round.",
+        "depts": [
+          {
+            "name": "Engineering Design",
+            "lead": "Lead to be assigned"
+          },
+          {
+            "name": "Cost Report",
+            "lead": "Lead to be assigned"
+          },
+          {
+            "name": "Business Plan",
+            "lead": "Lead to be assigned"
+          }
+        ]
+      }
+    ]
+  },
+  "comp": {
+    "heroEyebrow": "Competition",
+    "heroTitle": "A thousand points, eight events, one car.",
+    "whatTitle": "What is Formula Student?",
+    "what1": "Formula Student is an international competition that brings together the best engineering schools and challenges teams made up exclusively of students to conceive, design, manufacture and compete with an electric single-seater built from scratch.",
+    "what2": "In Spain, Formula Student takes place every August at the iconic Circuit de Montmeló in Barcelona. The competition is divided into two distinct parts: static events and dynamic events.",
+    "what3": "Between them, teams must pass technical inspections with over a thousand compliance items. Only the cars that clear them are allowed to run.",
+    "facts": [
+      {
+        "v": "1,000",
+        "l": "Points on offer"
+      },
+      {
+        "v": "8",
+        "l": "Scoring events"
+      },
+      {
+        "v": "1,000+",
+        "l": "Technical compliance items"
+      }
+    ],
+    "staticEyebrow": "Static block",
+    "staticTitle": "Static events",
+    "staticLead": "Engineering judgement is what gets scored, not just the result: why it is designed this way, what it costs to manufacture, and whether the project stands up as a business.",
+    "staticEvents": [
+      {
+        "name": "Engineering Design",
+        "points": "150",
+        "desc": "Design defence in front of industry judges: decisions, simulation, validation and traceability for every technical choice."
+      },
+      {
+        "name": "Cost & Manufacturing",
+        "points": "100",
+        "desc": "The real cost of the car part by part, manufacturing processes and the economic case for every component."
+      },
+      {
+        "name": "Business Plan",
+        "points": "75",
+        "desc": "The project presented as a business opportunity to an investor panel. Second place in 2021, a podium in 2024."
+      }
+    ],
+    "dynEyebrow": "Dynamic block",
+    "dynTitle": "Dynamic events",
+    "dynLead": "Five events that push the car to its limit: top speed, cornering stability, reliability, efficiency and range.",
+    "dynEvents": [
+      {
+        "no": "D1",
+        "name": "Acceleration",
+        "points": "75",
+        "desc": "75 metres in a straight line from standstill. Traction, torque control and load transfer."
+      },
+      {
+        "no": "D2",
+        "name": "Skidpad",
+        "points": "75",
+        "desc": "A constant-radius figure of eight. It measures lateral balance and weight distribution."
+      },
+      {
+        "no": "D3",
+        "name": "Autocross",
+        "points": "100",
+        "desc": "A single fast lap on a cone course. It sets the endurance starting order."
+      },
+      {
+        "no": "D4",
+        "name": "Endurance",
+        "points": "325",
+        "desc": "22 kilometres with a driver change. The highest-scoring event, and the one that breaks the most cars."
+      },
+      {
+        "no": "D5",
+        "name": "Efficiency",
+        "points": "100",
+        "desc": "Energy consumed against lap time. It rewards how well the accumulator is managed."
+      }
+    ],
+    "tableTitle": "Points breakdown",
+    "tableCols": {
+      "event": "Event",
+      "type": "Block",
+      "points": "Points"
+    },
+    "tableRows": [
+      {
+        "event": "Business Plan",
+        "type": "Static",
+        "points": "75"
+      },
+      {
+        "event": "Cost & Manufacturing",
+        "type": "Static",
+        "points": "100"
+      },
+      {
+        "event": "Engineering Design",
+        "type": "Static",
+        "points": "150"
+      },
+      {
+        "event": "Acceleration",
+        "type": "Dynamic",
+        "points": "75"
+      },
+      {
+        "event": "Skidpad",
+        "type": "Dynamic",
+        "points": "75"
+      },
+      {
+        "event": "Autocross",
+        "type": "Dynamic",
+        "points": "100"
+      },
+      {
+        "event": "Efficiency",
+        "type": "Dynamic",
+        "points": "100"
+      },
+      {
+        "event": "Endurance",
+        "type": "Dynamic",
+        "points": "325"
+      },
+      {
+        "event": "Total",
+        "type": "—",
+        "points": "1,000"
+      }
+    ],
+    "tableNote": "Reference breakdown from the Formula Student rules for the electric category.",
+    "scrutEyebrow": "Scrutineering",
+    "scrutTitle": "Before you run, you pass inspection",
+    "scrutText": "Mechanical and electrical inspection, tilt test, brake test and rain test. It is the filter that keeps half the grid out of the dynamic events. ISC has cleared it five seasons in a row.",
+    "scrutCta": "Read the newsroom"
+  },
+  "spon": {
+    "heroEyebrow": "Sponsors",
+    "heroTitle": "Innovation, together.",
+    "heroLead": "We look for experienced companies that share the same drive for innovation and see the project for what it is: a pool of talent and initiative among young engineers about to enter working life.",
+    "stats": [
+      {
+        "v": "80+",
+        "l": "Students involved"
+      },
+      {
+        "v": "9",
+        "l": "Seasons"
+      },
+      {
+        "v": "8",
+        "l": "Cars built"
+      },
+      {
+        "v": "3",
+        "l": "Countries raced in"
+      }
+    ],
+    "whyEyebrow": "Why sponsor us",
+    "whyTitle": "What you would be supporting",
+    "whyLead": "Because of its international character, Formula Student is the perfect showroom for any company that recognises the potential of engineering and youth combined.",
+    "why": [
+      {
+        "title": "Young talent",
+        "text": "Our members work inside a structure much like the one they will find in their first job: reports, deadlines, processes, documentation and, above all, responsibility."
+      },
+      {
+        "title": "Innovation in electric mobility",
+        "text": "The team trains and innovates in the electrical systems taking over the mobility industry. Members acquire the specific knowledge needed to work in electric vehicle ecosystems."
+      },
+      {
+        "title": "Innovation in autonomous driving",
+        "text": "We are leading the first efforts to implement autonomous electric systems within Formula Student in Madrid, preparing our members for real autonomous mobility environments."
+      },
+      {
+        "title": "Spanish engineering in Europe",
+        "text": "Support for Spanish engineers and Spanish universities on the European and international stage, competing at the benchmark events of the electric category."
+      }
+    ],
+    "partnerEyebrow": "Ways to collaborate",
+    "partnerTitle": "Three ways into the project",
+    "partners": [
+      {
+        "tag": "Finance",
+        "title": "Finance Partner",
+        "text": "Provides financial support to the team and backs specific lines of research within the project."
+      },
+      {
+        "tag": "Fabrication",
+        "title": "Fabrication Partner",
+        "text": "Supplies parts and components, or helps manufacture elements of the car."
+      },
+      {
+        "tag": "Logistics",
+        "title": "Logistics Partner",
+        "text": "Provides means for the team: vehicle transport, member travel, tooling, workshop material or audiovisual support."
+      }
+    ],
+    "wallEyebrow": "Our sponsors",
+    "wallTitle": "Who stands behind the IFS-08",
+    "wallLead": "We look for long-term agreements in which both parties make the most of the project's potential and of its members.",
+    "wallNote": "Brands shown as names; to be replaced with official logotypes in the final build.",
+    "tiers": [
+      {
+        "tier": "Title Sponsor",
+        "note": "Lead partner",
+        "logos": [
+          "Iberdrola"
+        ]
+      },
+      {
+        "tier": "Main Sponsor · Institutional support",
+        "note": "Equal standing",
+        "logos": [
+          "Fundación Gestamp",
+          "Universidad Pontificia Comillas ICAI"
+        ]
+      },
+      {
+        "tier": "Official Sponsors",
+        "note": "",
+        "logos": [
+          "Siemens",
+          "Festo",
+          "Altair",
+          "ARRK",
+          "Vector",
+          "Santalucía Seguros",
+          "Cesvimap",
+          "Northgate",
+          "JBC",
+          "Marple",
+          "Mobios",
+          "Teade"
+        ]
+      },
+      {
+        "tier": "Associate Sponsors",
+        "note": "",
+        "logos": [
+          "Valmoldes",
+          "Trim Composites",
+          "Elektrisola",
+          "RapidHarness",
+          "NX Technologies",
+          "Huber+Suhner",
+          "Rótulos Renedo",
+          "Dorotea Olmedo"
+        ]
+      }
+    ],
+    "formEyebrow": "Contact",
+    "formTitle": "Let's talk about the 2026/2027 season",
+    "formLead": "Tell us what interests you and we will send the full dossier with the sponsorship packages and what each tier includes.",
+    "form": {
+      "name": "Full name",
+      "org": "Company",
+      "email": "Email address",
+      "interest": "Type of collaboration",
+      "interestOpts": [
+        "Finance Partner",
+        "Fabrication Partner",
+        "Logistics Partner",
+        "Still to be defined"
+      ],
+      "message": "Message",
+      "help": "We reply within five working days.",
+      "submit": "Request the dossier"
+    },
+    "dossierTitle": "Sponsorship dossier",
+    "dossierText": "Season 2025/2026: team history, car evolution, structure, technical objectives and collaboration models.",
+    "dossierEs": "Descargar dossier (ES)",
+    "dossierEn": "Download dossier (EN)",
+    "dossierMeta": "PDF · 15 pages · Spanish and English"
+  },
+  "news": {
+    "heroEyebrow": "Newsroom",
+    "heroTitle": "What happens in the box.",
+    "heroLead": "Season, competitions, technical progress and team life. Everything we publish, newest first.",
+    "filters": [
+      "All",
+      "Competition",
+      "Team",
+      "Technical",
+      "Sponsors"
+    ],
+    "readMore": "Read more",
+    "archive": "See archive",
+    "briefsTitle": "In brief"
+  },
+  "footer": {
+    "tagline": "ISC Formula Student Racing Team. Student motorsport team of Universidad Pontificia Comillas ICAI, Madrid.",
+    "addr1": "Universidad Pontificia Comillas ICAI",
+    "addr2": "C/ Alberto Aguilera 25",
+    "addr3": "28015 Madrid · Spain",
+    "cols": [
+      {
+        "title": "The project",
+        "links": [
+          {
+            "label": "Team",
+            "href": "#team"
+          },
+          {
+            "label": "Competition",
+            "href": "#competition"
+          },
+          {
+            "label": "Newsroom",
+            "href": "#news"
+          },
+          {
+            "label": "The IFS-08",
+            "href": "#competition"
+          }
+        ]
+      },
+      {
+        "title": "Get involved",
+        "links": [
+          {
+            "label": "Sponsors",
+            "href": "#sponsors"
+          },
+          {
+            "label": "Collaboration models",
+            "href": "#sponsors"
+          },
+          {
+            "label": "Sponsorship dossier",
+            "href": "#sponsors"
+          },
+          {
+            "label": "Join the team",
+            "href": "#team"
+          }
+        ]
+      },
+      {
+        "title": "Contact",
+        "links": [
+          {
+            "label": "info@iscfsracing.es",
+            "href": "#sponsors"
+          },
+          {
+            "label": "Instagram",
+            "href": "#news"
+          },
+          {
+            "label": "LinkedIn",
+            "href": "#news"
+          },
+          {
+            "label": "YouTube",
+            "href": "#news"
+          }
+        ]
+      }
+    ],
+    "legal": "© 2026 ISC Formula Student Racing Team · Universidad Pontificia Comillas ICAI",
+    "legalLinks": [
+      "Legal notice",
+      "Privacy policy",
+      "Cookies"
+    ]
+  }
+}

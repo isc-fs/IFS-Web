@@ -1,0 +1,43 @@
+---
+import '../styles/tokens.css';
+import '../styles/fonts.css';
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import Footer from '../components/Footer.astro';
+import { type Lang, useTranslations, otherLang, path } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  current: string;
+  title: string;
+  description?: string;
+  /** Path of this page without the language prefix, e.g. '/team'. */
+  self?: string;
+}
+
+const { lang, current, title, description, self = '/' } = Astro.props;
+const t = useTranslations(lang);
+const alt = otherLang(lang);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="alternate" hreflang={alt} href={path(alt, self)} />
+    <link rel="alternate" hreflang={lang} href={path(lang, self)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/car-track-austria.jpg" />
+  </head>
+  <body class="isc-dark">
+    <SiteHeader lang={lang} current={current} self={self} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

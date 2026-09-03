@@ -1,0 +1,337 @@
+/* ISC — base layer: resets plus the design system's primitives (eyebrow,
+ * heading, rule, button, badge, stat, table, field, nav). Component-specific
+ * layout lives in *.module.css next to each component or page.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--isc-ink);
+  color: var(--isc-d-text);
+  font-family: var(--isc-font-body);
+  font-size: var(--isc-fs-body);
+  line-height: var(--isc-lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--isc-c-link, var(--isc-gold));
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--isc-gold-400);
+}
+
+.isc-light a:hover {
+  color: var(--isc-green);
+}
+
+::selection {
+  background: var(--isc-gold);
+  color: var(--isc-green-900);
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--isc-maxw-content);
+  margin: 0 auto;
+  padding: 0 var(--isc-page-pad);
+}
+
+.section {
+  padding: var(--isc-space-9) 0;
+}
+
+.prose {
+  max-width: var(--isc-maxw-prose);
+}
+
+/* ── Type primitives ─────────────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--isc-ls-label);
+  margin: 0 0 var(--isc-space-3);
+  color: var(--isc-c-label);
+}
+
+.heading {
+  font-family: var(--isc-font-display);
+  font-weight: var(--isc-fw-display);
+  line-height: var(--isc-lh-heading);
+  letter-spacing: var(--isc-ls-heading);
+  margin: 0 0 var(--isc-space-4);
+  color: var(--isc-c-accent);
+}
+
+.display-xl,
+.display-l,
+.display-m {
+  line-height: var(--isc-lh-display);
+  letter-spacing: var(--isc-ls-display);
+}
+
+.display-xl { font-size: var(--isc-fs-display-xl); }
+.display-l { font-size: var(--isc-fs-display-l); }
+.display-m { font-size: var(--isc-fs-display-m); }
+.h1 { font-size: var(--isc-fs-h1); letter-spacing: var(--isc-ls-display); }
+.h2 { font-size: var(--isc-fs-h2); }
+.h3 { font-size: var(--isc-fs-h3); }
+.h4 { font-size: var(--isc-fs-h4); }
+
+.lead {
+  font-size: var(--isc-fs-body-l);
+  line-height: 1.62;
+  color: var(--isc-c-text-mut);
+  margin: 0 0 var(--isc-space-6);
+}
+
+.body {
+  margin: 0 0 var(--isc-space-4);
+}
+
+.muted { color: var(--isc-c-text-mut); }
+.small { font-size: var(--isc-fs-body-s); }
+.caption { font-size: var(--isc-fs-caption); line-height: var(--isc-lh-dense); }
+
+.mono {
+  font-family: var(--isc-font-mono);
+  letter-spacing: var(--isc-ls-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Gold rule — marks where text begins. Never full width. ──────────────── */
+.rule {
+  border: 0;
+  border-top: var(--isc-rule);
+  width: 64px;
+  margin: 0 0 var(--isc-space-4);
+}
+
+.rule-sm { width: 44px; }
+.rule-lg { width: 88px; }
+
+/* ── Button ──────────────────────────────────────────────────────────────── */
+.btn {
+  font-family: var(--isc-font-display);
+  font-weight: 600;
+  font-size: var(--isc-fs-body-s);
+  text-transform: uppercase;
+  letter-spacing: var(--isc-ls-label);
+  line-height: 1;
+  padding: 14px 22px;
+  display: inline-block;
+  border: var(--isc-border-w) solid transparent;
+  border-radius: var(--isc-radius-0);
+  cursor: pointer;
+  transition: background var(--isc-dur-fast) var(--isc-ease),
+    color var(--isc-dur-fast) var(--isc-ease);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--isc-gold);
+  outline-offset: 2px;
+}
+
+.btn-sm { padding: 9px 14px; font-size: var(--isc-fs-micro); }
+.btn-lg { padding: 18px 30px; font-size: var(--isc-fs-body); }
+.btn-block { display: block; width: 100%; text-align: center; }
+
+.btn-primary {
+  background: var(--isc-gold);
+  color: var(--isc-green-900);
+  border-color: var(--isc-gold);
+}
+.btn-primary:hover { background: var(--isc-gold-400); color: var(--isc-green-900); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--isc-c-text);
+  border-color: var(--isc-c-border-strong);
+}
+.isc-dark .btn-secondary:hover { background: rgba(255, 255, 255, 0.08); color: var(--isc-white); }
+.isc-light .btn-secondary:hover { background: rgba(6, 66, 41, 0.06); }
+
+.btn-green {
+  background: var(--isc-green);
+  color: var(--isc-white);
+  border-color: var(--isc-green);
+}
+.btn-green:hover { background: var(--isc-green-600); color: var(--isc-white); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--isc-c-text-mut);
+  border-color: transparent;
+}
+.btn-ghost:hover { color: var(--isc-c-accent); }
+
+/* ── Text link with the gold underline ───────────────────────────────────── */
+.link-rule {
+  display: inline-block;
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-micro);
+  font-weight: 600;
+  letter-spacing: var(--isc-ls-label);
+  text-transform: uppercase;
+  border-bottom: var(--isc-rule);
+  padding-bottom: 4px;
+}
+
+/* ── Badge / chip ────────────────────────────────────────────────────────── */
+.badge {
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--isc-ls-label);
+  padding: 5px 10px;
+  border-radius: var(--isc-radius-sm);
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.badge-gold { background: var(--isc-gold); color: var(--isc-green-900); }
+.badge-green { background: var(--isc-green); color: var(--isc-white); }
+.badge-outline {
+  background: transparent;
+  color: var(--isc-c-badge-outline);
+  border: var(--isc-border-w) solid currentColor;
+}
+.badge-pill {
+  border-radius: var(--isc-radius-pill);
+  padding: 6px 14px;
+  font-family: var(--isc-font-body);
+  font-size: var(--isc-fs-caption);
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 500;
+}
+
+/* ── Stat tile ───────────────────────────────────────────────────────────── */
+.stat {
+  border-top: var(--isc-rule);
+  padding-top: var(--isc-space-3);
+}
+
+.stat-value {
+  font-family: var(--isc-font-display);
+  font-weight: 600;
+  font-size: var(--isc-fs-display-m);
+  line-height: var(--isc-lh-display);
+  letter-spacing: var(--isc-ls-display);
+  margin: 0;
+  color: var(--isc-c-accent);
+}
+
+.stat-label {
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--isc-ls-label);
+  margin: var(--isc-space-2) 0 0;
+  color: var(--isc-c-text-mut);
+}
+
+/* ── Spec table ──────────────────────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--isc-fs-body-s);
+  line-height: var(--isc-lh-dense);
+}
+
+.table th {
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--isc-ls-label);
+  text-align: left;
+  padding: 10px 16px 10px 0;
+  border-bottom: var(--isc-rule);
+  color: var(--isc-c-accent);
+}
+
+.table td {
+  padding: 12px 16px 12px 0;
+  vertical-align: baseline;
+  border-bottom: var(--isc-border-w) solid var(--isc-c-border);
+  color: var(--isc-c-text);
+}
+
+.table .num { text-align: right; }
+
+.table td.num {
+  font-family: var(--isc-font-mono);
+  letter-spacing: var(--isc-ls-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--isc-c-num);
+}
+
+/* ── Form field ──────────────────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--isc-space-2);
+  margin-bottom: var(--isc-space-5);
+}
+
+.label {
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--isc-ls-label);
+  color: var(--isc-c-label);
+}
+
+.input {
+  font-family: var(--isc-font-body);
+  font-size: var(--isc-fs-body);
+  padding: 12px 14px;
+  border-radius: var(--isc-radius-0);
+  width: 100%;
+  background: var(--isc-c-input-bg);
+  color: var(--isc-c-text);
+  border: var(--isc-border-w) solid var(--isc-c-border-strong);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--isc-gold);
+  outline-offset: 1px;
+}
+
+.help {
+  font-size: var(--isc-fs-caption);
+  color: var(--isc-c-text-mut);
+}
+
+/* ── Responsive: collapse the multi-column grids ─────────────────────────── */
+@media (max-width: 1080px) {
+  :root {
+    --isc-fs-display-xl: 54px;
+    --isc-fs-display-l: 42px;
+    --isc-fs-display-m: 32px;
+    --isc-page-pad: 24px;
+  }
+  .section { padding: var(--isc-space-8) 0; }
+}

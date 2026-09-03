@@ -1,0 +1,19 @@
+---
+interface Props {
+  value: string;
+  label: string;
+  /** Override the value colour, e.g. on light grounds */
+  color?: string;
+  fontSize?: string;
+}
+
+const { value, label, color, fontSize } = Astro.props;
+const valueStyle = [color ? `color:${color}` : '', fontSize ? `font-size:${fontSize}` : '']
+  .filter(Boolean)
+  .join(';');
+---
+
+<div class="stat">
+  <p class="stat-value" style={valueStyle}>{value}</p>
+  <p class="stat-label">{label}</p>
+</div>

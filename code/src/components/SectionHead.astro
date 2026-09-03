@@ -1,0 +1,17 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  lead?: string;
+  size?: 'display-m' | 'h1' | 'h2';
+  /** Extra bottom margin below the lead, in px */
+  gap?: number;
+}
+
+const { eyebrow, title, lead, size = 'display-m', gap = 48 } = Astro.props;
+---
+
+{eyebrow && <p class="eyebrow">{eyebrow}</p>}
+<h2 class={`heading ${size}`} style="margin-bottom:18px">{title}</h2>
+<hr class="rule" />
+{lead && <p class="lead" style={`max-width:58ch;margin-bottom:${gap}px`}>{lead}</p>}
