@@ -3,6 +3,12 @@ version: 2
 updates:
   # Astro and its toolchain. Grouped so the team reviews one PR a month
   # rather than five, and targeted at dev like every other change.
+  #
+  # Major versions are deliberately excluded. Left unrestricted, the first
+  # run proposed astro 4 -> 7 and typescript 5 -> 7, which no student team
+  # wants to land unreviewed on a monthly cron. Majors are a deliberate
+  # upgrade: bump them by hand on a feat/<n> branch when someone has time
+  # to read the migration guide.
   - package-ecosystem: npm
     directory: /code
     schedule:
@@ -10,6 +16,9 @@ updates:
     target-branch: dev
     open-pull-requests-limit: 3
     labels: [fix]
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
     groups:
       astro:
         patterns: ['astro', '@astrojs/*']
@@ -23,3 +32,6 @@ updates:
     target-branch: dev
     open-pull-requests-limit: 2
     labels: [fix]
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']

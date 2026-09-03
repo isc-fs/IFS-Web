@@ -1,0 +1,146 @@
+.intro {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 80px;
+}
+
+.introStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 32px;
+  align-content: start;
+  padding-top: 8px;
+}
+
+.leadership {
+  background: var(--isc-green);
+}
+
+.leadGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin: 0 0 28px;
+}
+
+.portrait {
+  aspect-ratio: 4 / 5;
+  background: var(--isc-green-900);
+  border: var(--isc-border-w) solid var(--isc-c-border);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  margin: 0 0 var(--isc-space-4);
+}
+
+.portrait span {
+  font-size: var(--isc-fs-micro);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.34);
+}
+
+.role {
+  margin: 0 0 6px;
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--isc-gold);
+}
+
+.name {
+  margin: 0;
+  color: #fff;
+}
+
+.techGrid {
+  border-top: var(--isc-border-w) solid var(--isc-c-border);
+  padding-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 40px;
+}
+
+.techItem {
+  border-left: var(--isc-rule-w) solid var(--isc-gold);
+  padding-left: 18px;
+}
+
+.techItem p:last-child {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.vertical {
+  border-top: var(--isc-border-w) solid var(--isc-c-border);
+  padding: 48px 0;
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 64px;
+}
+
+.vertHead {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0 0 14px;
+}
+
+.vertCode {
+  font-size: var(--isc-fs-caption);
+  color: var(--isc-gold);
+}
+
+.deptGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
+  margin: 0 0 28px;
+}
+
+.dept {
+  padding: 14px 0;
+  border-bottom: var(--isc-border-w) solid var(--isc-c-border);
+}
+
+.deptName {
+  margin: 0 0 4px;
+  font-family: var(--isc-font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.deptLead {
+  margin: 0;
+  font-size: var(--isc-fs-caption);
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.memberGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.memberSlot {
+  aspect-ratio: 1 / 1;
+  background: var(--isc-green-900);
+  border: var(--isc-border-w) solid var(--isc-c-border);
+}
+
+@media (max-width: 1080px) {
+  .intro,
+  .vertical {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .leadGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .techGrid {
+    grid-template-columns: 1fr;
+  }
+}

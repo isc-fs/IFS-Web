@@ -1,0 +1,197 @@
+.metaStrip {
+  border-top: var(--isc-border-w) solid var(--isc-c-border);
+  border-bottom: var(--isc-border-w) solid var(--isc-c-border);
+  background: var(--isc-green-900);
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.metaCell {
+  padding: 22px 24px;
+  border-left: var(--isc-border-w) solid var(--isc-c-border);
+}
+
+.metaKey {
+  margin: 0 0 6px;
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.metaValue {
+  margin: 0;
+  font-size: var(--isc-fs-h4);
+  color: var(--isc-gold);
+}
+
+.sponsorStrip {
+  background: var(--isc-ink);
+  padding: 54px 0;
+}
+
+.sponsorRow {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.sponsorLabel {
+  margin: 0;
+  flex: 0 0 auto;
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.sponsorNames {
+  flex: 1 1 520px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 40px;
+}
+
+.sponsorNames span {
+  font-family: var(--isc-font-display);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.events {
+  background: var(--isc-green);
+}
+
+.eventGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.eventCard {
+  background: var(--isc-green-600);
+  border: var(--isc-border-w) solid var(--isc-c-border);
+  padding: 28px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 230px;
+}
+
+.countdown {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.days {
+  font-family: var(--isc-font-display);
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--isc-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.daysLabel {
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.eventMeta {
+  margin-top: auto;
+}
+
+.eventName {
+  margin: 0 0 6px;
+  font-family: var(--isc-font-display);
+  font-size: var(--isc-fs-body-l);
+  font-weight: 600;
+  color: #fff;
+}
+
+.eventPlace {
+  margin: 0 0 2px;
+  font-size: var(--isc-fs-body-s);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.eventDate {
+  margin: 0;
+  font-size: var(--isc-fs-caption);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.join {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--isc-ink);
+}
+
+.joinPhoto {
+  min-height: 520px;
+  background-image: url('/assets/team-celebration.jpg');
+  background-size: cover;
+  background-position: 52% 50%;
+}
+
+.joinBody {
+  padding: 96px 72px 96px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.joinPoints {
+  margin: 0 0 34px;
+}
+
+.joinPoint {
+  display: flex;
+  gap: 18px;
+  padding: 16px 0;
+  border-top: var(--isc-border-w) solid var(--isc-c-border);
+}
+
+.joinPoint span:first-child {
+  flex: 0 0 auto;
+  color: var(--isc-gold);
+  font-size: var(--isc-fs-caption);
+}
+
+.joinPoint span:last-child {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+@media (max-width: 1080px) {
+  .metaGrid,
+  .eventGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .join {
+    grid-template-columns: 1fr;
+  }
+  .joinPhoto {
+    min-height: 320px;
+  }
+  .joinBody {
+    padding: 64px var(--isc-page-pad);
+  }
+}
