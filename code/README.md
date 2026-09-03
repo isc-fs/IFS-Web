@@ -117,7 +117,31 @@ All UI copy is in `src/i18n/es.json` and `src/i18n/en.json`, mirrored key for ke
 
 ### Sponsors
 
-`spon.tiers` in each dictionary — tier name, optional note and a list of brand names. The wall currently renders names as text; swap `.logoBox` for `<img>` once the official logotypes are available.
+`spon.tiers` in each dictionary — tier name, optional note and a list of brand
+names. Artwork is mapped separately in `src/data/sponsors.json`, keyed by the
+exact brand name used in the tier list:
+
+```json
+"Fundación Gestamp": { "file": "fundacion-gestamp.png", "treat": "forceWhite" }
+```
+
+Logos are not translatable, so they live there rather than being duplicated
+across both dictionaries. A brand with no entry renders as text, which is how
+sponsors who have not sent artwork still appear on the wall.
+
+- `treat` — `forceWhite` flattens dark artwork to white; `knockout` removes a
+  light background baked into the file. Omit it when the sponsor supplied a
+  white lockup, which most did.
+- `scale` — only for artwork delivered with wide transparent margins around the
+  mark. Aspect ratio cannot detect that padding, so those files land far
+  smaller than everything beside them.
+
+Size is not set per logo. `src/lib/sponsorLogos.ts` reads each file's real
+dimensions at build time and picks one of three caps from the aspect ratio, so
+a 6:1 wordmark and a 1:1 mark carry similar optical weight. The `<img>` carries
+no width or height, so it renders at its intrinsic size and the caps only ever
+shrink it — a small bitmap is never enlarged and softened. Rasters additionally
+get a hard ceiling at their own pixel width.
 
 ### Newsroom
 
@@ -166,7 +190,12 @@ Spanish is the default. Route slugs are identical in both languages, only labels
 
 - [ ] Point the sponsorship form's `action` at a real handler (Formspree, Netlify Forms, an API route). It is currently `action="#"`.
 - [ ] Replace `info@iscfsracing.es` and the social links in `footer.cols` with the real ones.
-- [ ] Swap the sponsor-wall brand names for the official logotypes.
+- [ ] Chase artwork for the sponsors still rendering as text, and better files
+      for the five that needed compromises: Fundación Gestamp and Doroteo
+      Olmedo sent dark artwork now flattened to white (a real white lockup
+      would keep their brand colour), Valmoldes sent only a vertical lockup,
+      A123 Systems and Colegio ICAI sent artwork with a white background baked
+      in. Keyshot sent only `.eps`, which browsers cannot render.
 - [ ] Replace the member portrait placeholders on the team page with the season photography.
 - [ ] Add the extended-Latin font files if any copy needs characters outside the Latin subset.
 - [ ] Set the production domain in `astro.config.mjs` (`site`).

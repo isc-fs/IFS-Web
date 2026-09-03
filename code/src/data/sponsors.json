@@ -1,21 +1,56 @@
 {
-  "_comment": "Brand name (exactly as it appears in spon.tiers[].logos in es.json/en.json) -> file in public/assets/sponsors/. Logos are not translatable, so they live here rather than being duplicated in both dictionaries, where they would be one more thing to drift. A brand with no entry falls back to its name set in type.",
-
-  "Iberdrola": "iberdrola.png",
-  "Fundación Gestamp": "fundacion-gestamp.png",
-
-  "Siemens": "siemens.svg",
-  "Festo": "festo.svg",
-  "Altair": "altair.png",
-  "Vector": "vector.svg",
-  "Cesvimap": "cesvimap.svg",
-  "Marple": "marple.svg",
-  "Mobios": "mobios.svg",
-  "Teade": "teade.svg",
-
-  "Valmoldes": "valmoldes.svg",
-  "Trim Composites": "trim-composites.svg",
-  "RapidHarness": "rapidharness.png",
-  "Huber+Suhner": "huber-suhner.svg",
-  "Doroteo Olmedo": "doroteo-olmedo.png"
+  "_comment": "Brand name (exactly as in spon.tiers[].logos in es.json/en.json) -> artwork in public/assets/sponsors/. Logos are not translatable, so they live here instead of being duplicated across both dictionaries. A brand with no entry renders as type. treat: forceWhite flattens dark artwork to white; knockout drops a baked-in light background. Size is not set here - it is derived from each file's real aspect ratio at build time in src/lib/sponsorLogos.ts.",
+  "Iberdrola": {
+    "file": "iberdrola.png"
+  },
+  "Fundación Gestamp": {
+    "file": "fundacion-gestamp.png",
+    "treat": "forceWhite"
+  },
+  "Siemens": {
+    "file": "siemens.svg"
+  },
+  "Festo": {
+    "file": "festo.svg"
+  },
+  "Altair": {
+    "file": "altair.png"
+  },
+  "Vector": {
+    "file": "vector.svg",
+    "scale": 1.6
+  },
+  "Cesvimap": {
+    "file": "cesvimap.svg",
+    "scale": 1.25
+  },
+  "Marple": {
+    "file": "marple.svg"
+  },
+  "Mobios": {
+    "file": "mobios.svg"
+  },
+  "Teade": {
+    "file": "teade.svg",
+    "scale": 1.3
+  },
+  "Valmoldes": {
+    "file": "valmoldes.svg",
+    "scale": 1.15
+  },
+  "Trim Composites": {
+    "file": "trim-composites.svg"
+  },
+  "RapidHarness": {
+    "file": "rapidharness.png"
+  },
+  "Huber+Suhner": {
+    "file": "huber-suhner.png",
+    "treat": "forceWhite"
+  },
+  "Doroteo Olmedo": {
+    "file": "doroteo-olmedo.png",
+    "treat": "forceWhite",
+    "scale": 1.3
+  }
 }

@@ -71,26 +71,64 @@
 
 .logoBox {
   flex: 0 0 auto;
-  min-width: 190px;
-  height: 96px;
-  padding: 18px 24px;
+  /* A fixed cell, not a content-sized one. Letting the box grow with the
+     artwork made a long wordmark three times the width of a square mark and
+     the row read as a ranking rather than a set. */
+  width: 200px;
+  height: 104px;
+  padding: 16px 20px;
   border: var(--isc-border-w) solid var(--isc-c-border);
   background: rgba(255, 255, 255, 0.04);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 28px;
 }
 
-/* Logos are supplied as white/mono lockups for the dark ground. object-fit
-   keeps wildly different aspect ratios (square marks next to wide wordmarks)
-   inside the same box without distorting any of them. */
+/* No width/height on the <img>, so it renders at its intrinsic size and these
+   caps only ever shrink it — a small raster is never blown up and softened.
+   The cap is picked per aspect ratio so a 6:1 wordmark and a 1:1 mark carry
+   roughly the same optical weight instead of the same bounding box. */
 .logoBox img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  /* Every cap is also clamped to 100% of the cell, so a --logo-scale bump
+   can never push a logo out of its box.
+   --logo-cap-w is the file's own intrinsic width, set inline for rasters
+     only. It guarantees a small bitmap is never stretched past its real
+     pixels no matter what --logo-scale asks for. */
+  max-width: min(100%, var(--logo-cap-w, 100%));
   object-fit: contain;
+  /* Pure white at full strength sits louder than the surrounding type. */
+  opacity: 0.92;
+}
+
+.wide {
+  max-height: min(calc(30px * var(--logo-scale, 1)), 100%);
+}
+
+.standard {
+  max-height: min(calc(44px * var(--logo-scale, 1)), 100%);
+}
+
+.mark {
+  max-width: min(calc(66px * var(--logo-scale, 1)), var(--logo-cap-w, 100%), 100%);
+  max-height: min(calc(62px * var(--logo-scale, 1)), 100%);
+}
+
+/* Dark artwork on a transparent ground: flatten it to solid white. Loses the
+   brand colour, but the alternative is navy on racing green. */
+.forceWhite {
+  filter: brightness(0) invert(1);
+}
+
+/* Artwork delivered with a light background baked in. Inverting turns that
+   background black and the mark light; screen then drops black to nothing, so
+   the slab disappears and the mark survives. */
+.knockout {
+  filter: grayscale(1) invert(1);
+  mix-blend-mode: screen;
+}
+
+.none {
+  /* no treatment — the sponsor supplied a white lockup */
 }
 
 .logoBox span {

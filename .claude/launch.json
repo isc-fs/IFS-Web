@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ifs-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "code", "run", "dev"],
+      "port": 4321
+    }
+  ]
+}
